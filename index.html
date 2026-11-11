@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Consulta Escolar & Simulador P4</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            darkbg: '#0b0f17',
+            cardbg: '#111827',
+            bordercol: '#1f293d',
+            accent: '#3b82f6',
+            success: '#10b981',
+            warning: '#f59e0b',
+            danger: '#ef4444'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Estilo rectangular estricto y limpio para celular */
+    * {
+      border-radius: 0px !important;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+      background-color: #080c14;
+      color: #e2e8f0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Scrollbar minimalista */
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0f17;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #233047;
+    }
+
+    .badge-rect {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex justify-center bg-[#070a10]">
+
+  <!-- Contenedor móvil rectangular centrado -->
+  <div class="w-full max-w-md min-h-screen bg-[#0e1420] border-x border-[#1a2333] flex flex-col pb-20 relative shadow-2xl">
+
+    <!-- Top Header -->
+    <header class="p-4 bg-[#0a0e17] border-b border-[#1c273c] sticky top-0 z-30 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-blue-600 flex items-center justify-center font-bold text-white shadow-lg">
+          <i class="fa-solid fa-graduation-cap text-lg"></i>
+        </div>
+        <div>
+          <h1 class="text-sm font-extrabold uppercase tracking-wider text-slate-100">Portal Académico</h1>
+          <p class="text-[10px] text-slate-400 font-mono tracking-tight" id="status-url">JSON: Conectado</p>
+        </div>
+      </div>
+      
+      <!-- Botón de configuración de URL de datos -->
+      <button onclick="toggleConfigModal()" class="p-2 bg-[#141d2e] border border-[#24334f] text-slate-300 hover:text-white hover:bg-blue-600/20 text-xs flex items-center gap-1.5 transition">
+        <i class="fa-solid fa-gear"></i>
+        <span class="text-[10px] font-mono">URL</span>
+      </button>
+    </header>
+
+    <!-- Barra de Navegación por pestañas (Fija al fondo o superior) -->
+    <div class="grid grid-cols-3 bg-[#0a0e17] border-b border-[#1c273c] text-xs font-semibold uppercase tracking-wider">
+      <button onclick="switchTab('boletin')" id="tab-btn-boletin" class="py-3 text-center border-b-2 border-blue-500 text-blue-400 bg-blue-500/10 transition">
+        <i class="fa-solid fa-id-card block text-base mb-1"></i> Boletín
+      </button>
+      <button onclick="switchTab('simulador')" id="tab-btn-simulador" class="py-3 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition">
+        <i class="fa-solid fa-calculator block text-base mb-1"></i> Pasar P4
+      </button>
+      <button onclick="switchTab('ranking')" id="tab-btn-ranking" class="py-3 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition">
+        <i class="fa-solid fa-trophy block text-base mb-1"></i> Rankings
+      </button>
+    </div>
+
+    <!-- SECCIÓN DE BUSCADOR PRINCIPAL -->
+    <section class="p-4 bg-[#101726] border-b border-[#1c273c]">
+      <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
+        <i class="fa-solid fa-magnifying-glass text-blue-400 mr-1"></i> Buscar Estudiante
+      </label>
+      <div class="relative">
+        <input 
+          type="text" 
+          id="student-search-input" 
+          placeholder="Escribe nombre o apellido..." 
+          autocomplete="off"
+          class="w-full bg-[#0a0f1a] border border-[#253550] px-3 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition font-sans"
+        />
+        <button id="clear-search-btn" onclick="limpiarBusqueda()" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Resultados desplegables del autocompletado -->
+      <div id="autocomplete-list" class="hidden mt-1 max-h-48 overflow-y-auto bg-[#0a0f1a] border border-[#253550] divide-y divide-[#172236] z-20 shadow-xl">
+        <!-- Render dinámico de estudiantes -->
+      </div>
+    </section>
+
+    <!-- CONTENIDO: PESTAÑA 1 - BOLETÍN DEL ESTUDIANTE -->
+    <main id="tab-content-boletin" class="p-4 flex-1 space-y-4">
+      
+      <!-- Ficha de Datos del Estudiante Seleccionado -->
+      <div class="bg-[#101726] border border-[#1d2a42] p-4 shadow-sm relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-2 h-full bg-blue-600"></div>
+        <div class="flex justify-between items-start">
+          <div>
+            <span class="text-[10px] font-mono text-blue-400 uppercase tracking-widest font-bold">Estudiante Activo</span>
+            <h2 id="student-name-display" class="text-base font-extrabold text-white mt-0.5 tracking-tight uppercase leading-snug">
+              Cargando...
+            </h2>
+            <p id="student-course-display" class="text-xs text-slate-400 font-medium mt-0.5">Grado: --</p>
+          </div>
+          <div class="text-right">
+            <span class="text-[10px] font-mono text-slate-400 block uppercase">Promedio Total</span>
+            <span id="student-overall-avg" class="text-xl font-black text-blue-400 font-mono">0.0</span>
+          </div>
+        </div>
+
+        <!-- Fila de puestos por periodo -->
+        <div class="mt-4 pt-3 border-t border-[#1a253a] grid grid-cols-3 gap-2 text-center">
+          <div class="bg-[#0b101c] p-2 border border-[#19243a]">
+            <span class="text-[9px] uppercase tracking-wider text-slate-400 block font-mono">Puesto P1</span>
+            <span id="pos-p1" class="text-sm font-bold text-emerald-400 font-mono">#--</span>
+          </div>
+          <div class="bg-[#0b101c] p-2 border border-[#19243a]">
+            <span class="text-[9px] uppercase tracking-wider text-slate-400 block font-mono">Puesto P2</span>
+            <span id="pos-p2" class="text-sm font-bold text-emerald-400 font-mono">#--</span>
+          </div>
+          <div class="bg-[#0b101c] p-2 border border-[#19243a]">
+            <span class="text-[9px] uppercase tracking-wider text-slate-400 block font-mono">Puesto P3</span>
+            <span id="pos-p3" class="text-sm font-bold text-emerald-400 font-mono">#--</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Selector de filtro de período -->
+      <div class="flex items-center justify-between pt-1">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
+          <i class="fa-solid fa-list-check text-blue-400"></i> Calificaciones
+        </h3>
+        <div class="flex gap-1 text-[11px] font-mono">
+          <button onclick="setFilterPeriod('all')" id="btn-period-all" class="px-2.5 py-1 bg-blue-600 text-white font-bold border border-blue-500">TODOS</button>
+          <button onclick="setFilterPeriod('p1')" id="btn-period-p1" class="px-2.5 py-1 bg-[#101726] text-slate-300 border border-[#1f2b42]">P1</button>
+          <button onclick="setFilterPeriod('p2')" id="btn-period-p2" class="px-2.5 py-1 bg-[#101726] text-slate-300 border border-[#1f2b42]">P2</button>
+          <button onclick="setFilterPeriod('p3')" id="btn-period-p3" class="px-2.5 py-1 bg-[#101726] text-slate-300 border border-[#1f2b42]">P3</button>
+        </div>
+      </div>
+
+      <!-- Contenedor con lista de materias -->
+      <div id="subjects-container" class="space-y-2.5">
+        <!-- Generación dinámica de materias -->
+      </div>
+    </main>
+
+    <!-- CONTENIDO: PESTAÑA 2 - SIMULADOR P4 (CÓMO PASAR EL AÑO) -->
+    <main id="tab-content-simulador" class="p-4 flex-1 space-y-4 hidden">
+      <!-- Explicación de la regla -->
+      <div class="bg-[#121c2e] border-l-4 border-amber-500 p-3.5 border-y border-r border-[#1e2d47]">
+        <div class="flex items-start gap-2.5">
+          <i class="fa-solid fa-circle-info text-amber-400 text-base mt-0.5"></i>
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider">Cálculo para aprobar el año</h4>
+            <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+              El año se aprueba sumando las notas de los 4 periodos. Con nota mínima aprobatoria de <strong class="text-amber-300" id="label-min-pass">60 pts</strong> por período, necesitas un acumulado de <strong class="text-amber-300" id="label-sum-required">240 puntos</strong> en total.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ajuste rápido de nota aprobatoria -->
+      <div class="bg-[#101726] border border-[#1d2a42] p-3 flex items-center justify-between">
+        <label class="text-xs font-bold uppercase text-slate-300 tracking-wider">
+          Nota mínima por periodo:
+        </label>
+        <div class="flex items-center gap-2">
+          <input 
+            type="number" 
+            id="min-passing-score" 
+            value="60" 
+            min="1" 
+            max="100" 
+            class="w-16 bg-[#0a0f1a] border border-[#253550] px-2 py-1 text-center font-mono font-bold text-white text-sm focus:outline-none focus:border-blue-500"
+            onchange="actualizarCalculosP4()"
+          />
+          <span class="text-xs text-slate-400 font-mono">pts</span>
+        </div>
+      </div>
+
+      <!-- Resumen Global de Diagnóstico -->
+      <div class="grid grid-cols-3 gap-2 text-center font-mono">
+        <div class="bg-[#101726] border border-emerald-900/50 p-2.5">
+          <span class="text-[9px] uppercase text-emerald-400 block font-bold">Ya Aprobadas</span>
+          <span id="stat-already-passed" class="text-lg font-black text-emerald-300">0</span>
+        </div>
+        <div class="bg-[#101726] border border-blue-900/50 p-2.5">
+          <span class="text-[9px] uppercase text-blue-400 block font-bold">Alcanzables</span>
+          <span id="stat-achievable" class="text-lg font-black text-blue-300">0</span>
+        </div>
+        <div class="bg-[#101726] border border-red-900/50 p-2.5">
+          <span class="text-[9px] uppercase text-red-400 block font-bold">En Riesgo / Imposible</span>
+          <span id="stat-critical" class="text-lg font-black text-red-400">0</span>
+        </div>
+      </div>
+
+      <!-- Tarjetas de Materias con Requerimiento para Periodo 4 -->
+      <div id="p4-calculator-container" class="space-y-3">
+        <!-- Se inserta con Javascript -->
+      </div>
+    </main>
+
+    <!-- CONTENIDO: PESTAÑA 3 - RANKINGS Y PUESTOS -->
+    <main id="tab-content-ranking" class="p-4 flex-1 space-y-4 hidden">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">
+          <i class="fa-solid fa-ranking-star text-amber-400 mr-1.5"></i> Tabla de Posiciones
+        </h3>
+        <select 
+          id="ranking-period-select" 
+          onchange="renderRankingTable()"
+          class="bg-[#101726] border border-[#223049] text-xs text-slate-200 font-mono py-1.5 px-2 focus:outline-none focus:border-blue-500"
+        >
+          <option value="promedio_general">Acumulado Global (P1+P2+P3)</option>
+          <option value="periodo_1">Período 1</option>
+          <option value="periodo_2">Período 2</option>
+          <option value="periodo_3">Período 3</option>
+        </select>
+      </div>
+
+      <!-- Lista de Rankings Rectangular -->
+      <div id="ranking-list" class="space-y-1.5">
+        <!-- Render dinámico de rankings -->
+      </div>
+    </main>
+
+    <!-- Modal de Configuración de URL JSON -->
+    <div id="config-modal" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+      <div class="bg-[#111827] border border-[#263753] w-full max-w-sm p-5 space-y-4 shadow-2xl">
+        <div class="flex justify-between items-center border-b border-[#1f2c42] pb-2">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-white">Configurar Fuente JSON</h4>
+          <button onclick="toggleConfigModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div>
+          <label class="block text-xs font-mono text-slate-300 mb-1">URL del JSON (CORS habilitado):</label>
+          <input 
+            type="text" 
+            id="json-url-input" 
+            value="https://pastebin.com/raw/134wNHxB" 
+            class="w-full bg-[#0a0f1a] border border-[#263753] px-3 py-2 text-xs font-mono text-white focus:outline-none focus:border-blue-500"
+          />
+          <p class="text-[11px] text-slate-400 mt-1 leading-normal">
+            Si la URL o la red fallan, se mantendrán los datos de respaldo en memoria.
+          </p>
+        </div>
+        <div class="flex gap-2 justify-end pt-2">
+          <button onclick="toggleConfigModal()" class="px-3 py-1.5 bg-[#172133] border border-[#283854] text-xs font-mono text-slate-300">
+            Cancelar
+          </button>
+          <button onclick="guardarYRecargarUrl()" class="px-4 py-1.5 bg-blue-600 hover:bg-blue-500 text-xs font-bold font-mono text-white">
+            Cargar Datos
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // ==========================================
+    // DATOS DE RESPALDO (FALLBACK EN CASO DE URL "tuurlxd" O ERROR)
+    // ==========================================
+    const DEFAULT_DATA = [
+      {
+        "nombre": "ACOSTA TORRES ISABELLA",
+        "curso": "Undécimo",
+        "puestos": {
+          "periodo_1": 4,
+          "periodo_2": 2,
+          "periodo_3": 5
+        },
+        "periodos": {
+          "periodo_1": {
+            "Física": 99,
+            "Química": 85,
+            "EDUCACIÓN ARTÍSTICA": 99,
+            "EDUCACIÓN ÉTICA Y EN VALORES": 99,
+            "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 98,
+            "EDUCACIÓN RELIGIOSA Y MORAL": 99,
+            "Lengua Castellana": 68,
+            "Idioma Extranjero (Inglés)": 96,
+            "CÁLCULO": 96,
+            "TECNOLOGÍA E INFORMÁTICA": 96,
+            "Contabilidad": 89,
+            "FILOSOFÍA": 98,
+            "COMPORTAMIENTO SOCIAL": 95
+          },
+          "periodo_2": {
+            "Física": 98,
+            "Química": 94,
+            "EDUCACIÓN ARTÍSTICA": 89,
+            "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+            "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 89,
+            "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+            "Lengua Castellana": 84,
+            "Idioma Extranjero (Inglés)": 86,
+            "CÁLCULO": 100,
+            "TECNOLOGÍA E INFORMÁTICA": 97,
+            "Contabilidad": 100,
+            "FILOSOFÍA": 99,
+            "COMPORTAMIENTO SOCIAL": 100
+          },
+          "periodo_3": {
+            "Física": 100,
+            "Química": 93,
+            "EDUCACIÓN ARTÍSTICA": 100,
+            "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+            "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 84,
+            "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+            "Lengua Castellana": 73,
+            "Idioma Extranjero (Inglés)": 94,
+            "CÁLCULO": 100,
+            "TECNOLOGÍA E INFORMÁTICA": 97,
+            "Contabilidad": 91,
+            "FILOSOFÍA": 100,
+            "COMPORTAMIENTO SOCIAL": 100
+          }
+        }
+      },
+      {
+        "nombre": "BERNAL ROJAS MATEO",
+        "curso": "Undécimo",
+        "puestos": {
+          "periodo_1": 1,
+          "periodo_2": 1,
+          "periodo_3": 1
+        },
+        "periodos": {
+          "periodo_1": {
+            "Física": 98,
+            "Química": 96,
+            "EDUCACIÓN ARTÍSTICA": 98,
+            "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+            "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 97,
+            "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+            "Lengua Castellana": 95,
+            "Idioma Extranjero (Inglés)": 98,
+            "CÁLCULO": 99,
+            "TECNOLOGÍA E INFORMÁTICA": 99,
+            "Contabilidad": 98,
+            "FILOSOFÍA": 98,
+            "COMPORTAMIENTO SOCIAL": 98
+          },
+          "periodo_2": {
+            "Física": 99,
+            "Química": 98,
+            "EDUCACIÓN ARTÍSTICA": 99,
+            "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+            "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 96,
+            "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+            "Lengua Castellana": 96,
+            "Idioma Extranjero (Inglés)": 99,
+            "CÁLCULO": 100,
+            "TECNOLOGÍA E INFORMÁTICA": 100,
+            "Contabilidad": 100,
+            "FILOSOFÍA": 100,
+            "COMPORTAMIENTO SOCIAL": 100
+          },
+          "periodo_3": {
+            "Física": 100,
+            "Química": 99,
+            "EDUCACIÓN ARTÍSTICA": 100,
+            "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+            "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 98,
+            "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+            "Lengua Castellana": 97,
+            "Idioma Extranjero (Inglés)": 100,
+            "CÁLCULO": 100,
+            "TECNOLOGÍA E INFORMÁTICA": 100,
+            "Contabilidad": 99,
+            "FILOSOFÍA": 100,
+            "COMPORTAMIENTO SOCIAL": 100
+          }
+        }
+      },
+      {
+        "nombre": "CASTILLO MENDEZ SOFIA",
+        "curso": "Undécimo",
+        "puestos": {
+          "periodo_1": 8,
+          "periodo_2": 9,
+          "periodo_3": 7
+        },
+        "periodos": {
+          "periodo_1": {
+            "Física": 62,
+            "Química": 58,
+            "EDUCACIÓN ARTÍSTICA": 90,
+            "EDUCACIÓN ÉTICA Y EN VALORES": 85,
+            "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 90,
+            "EDUCACIÓN RELIGIOSA Y MORAL": 90,
+            "Lengua Castellana": 60,
+            "Idioma Extranjero (Inglés)": 70,
+            "CÁLCULO": 52,
+            "TECNOLOGÍA E INFORMÁTICA": 80,
+            "Contabilidad": 65,
+            "FILOSOFÍA": 75,
+            "COMPORTAMIENTO SOCIAL": 88
+          },
+          "periodo_2": {
+            "Física": 58,
+            "Química": 60,
+            "EDUCACIÓN ARTÍSTICA": 92,
+            "EDUCACIÓN ÉTICA Y EN VALORES": 88,
+            "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 85,
+            "EDUCACIÓN RELIGIOSA Y MORAL": 92,
+            "Lengua Castellana": 65,
+            "Idioma Extranjero (Inglés)": 72,
+            "CÁLCULO": 50,
+            "TECNOLOGÍA E INFORMÁTICA": 82,
+            "Contabilidad": 68,
+            "FILOSOFÍA": 72,
+            "COMPORTAMIENTO SOCIAL": 90
+          },
+          "periodo_3": {
+            "Física": 55,
+            "Química": 63,
+            "EDUCACIÓN ARTÍSTICA": 94,
+            "EDUCACIÓN ÉTICA Y EN VALORES": 90,
+            "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 88,
+            "EDUCACIÓN RELIGIOSA Y MORAL": 95,
+            "Lengua Castellana": 62,
+            "Idioma Extranjero (Inglés)": 75,
+            "CÁLCULO": 58,
+            "TECNOLOGÍA E INFORMÁTICA": 85,
+            "Contabilidad": 70,
+            "FILOSOFÍA": 80,
+            "COMPORTAMIENTO SOCIAL": 92
+          }
+        }
+      }
+    ];
+
+    // ==========================================
+    // ESTADO DE LA APLICACIÓN
+    // ==========================================
+    let estudiantes = [];
+    let estudianteSeleccionado = null;
+    const DEFAULT_REMOTE_URL = 'https://pastebin.com/raw/134wNHxB';
+    let jsonEndpoint = localStorage.getItem('grades_json_url') || DEFAULT_REMOTE_URL;
+    let periodoFiltro = 'all'; // 'all', 'p1', 'p2', 'p3'
+
+    // ==========================================
+    // INICIALIZACIÓN Y CARGA DE DATOS
+    // ==========================================
+    async function fetchJsonConFallbacks(targetUrl) {
+      // 1. Intento directo
+      try {
+        const res = await fetch(targetUrl);
+        if (res.ok) {
+          const parsed = await res.json();
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch (e) {
+        console.warn('Petición directa falló (probablemente CORS en pastebin), probando proxy CORS...');
+      }
+
+      // 2. Si pastebin bloquea CORS directo en el cliente, usamos proxy CORS transparente
+      const proxies = [
+        `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
+        `https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`
+      ];
+
+      for (const proxyUrl of proxies) {
+        try {
+          const res = await fetch(proxyUrl);
+          if (res.ok) {
+            const parsed = await res.json();
+            if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+          }
+        } catch (err) {
+          console.warn(`Proxy ${proxyUrl} no respondió`, err);
+        }
+      }
+
+      throw new Error('No se pudo obtener el JSON de la URL remota');
+    }
+
+    async function cargarDatos() {
+      const statusLabel = document.getElementById('status-url');
+      document.getElementById('json-url-input').value = jsonEndpoint;
+
+      statusLabel.innerText = 'JSON: Descargando...';
+      statusLabel.className = 'text-[10px] text-blue-400 font-mono tracking-tight';
+
+      try {
+        const data = await fetchJsonConFallbacks(jsonEndpoint);
+        estudiantes = data;
+        statusLabel.innerText = 'JSON: Sincronizado (Pastebin)';
+        statusLabel.className = 'text-[10px] text-emerald-400 font-mono tracking-tight';
+      } catch (err) {
+        console.warn('Fallo al obtener JSON remoto. Activando fallback local:', err);
+        estudiantes = DEFAULT_DATA;
+        statusLabel.innerText = 'JSON: Fallback Local Activo';
+        statusLabel.className = 'text-[10px] text-amber-400 font-mono tracking-tight';
+      }
+
+      iniciarApp();
+    }
+
+    function iniciarApp() {
+      if (estudiantes.length > 0) {
+        // Seleccionar por defecto el primer alumno
+        seleccionarEstudiante(estudiantes[0]);
+      }
+      setupBuscador();
+      renderRankingTable();
+    }
+
+    // ==========================================
+    // SISTEMA DE BÚSQUEDA Y AUTOCOMPLETADO
+    // ==========================================
+    function setupBuscador() {
+      const searchInput = document.getElementById('student-search-input');
+      const autocompleteList = document.getElementById('autocomplete-list');
+      const clearBtn = document.getElementById('clear-search-btn');
+
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        
+        if (query.length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+
+        if (query.length < 1) {
+          autocompleteList.classList.add('hidden');
+          autocompleteList.innerHTML = '';
+          return;
+        }
+
+        const matches = estudiantes.filter(est => 
+          est.nombre.toLowerCase().includes(query) || 
+          (est.curso && est.curso.toLowerCase().includes(query))
+        );
+
+        if (matches.length === 0) {
+          autocompleteList.innerHTML = `
+            <div class="p-3 text-xs text-slate-400 text-center font-mono">
+              No se encontraron alumnos
+            </div>
+          `;
+          autocompleteList.classList.remove('hidden');
+          return;
+        }
+
+        autocompleteList.innerHTML = matches.map(alumno => `
+          <div 
+            onclick="seleccionarDesdeBusqueda('${alumno.nombre.replace(/'/g, "\\'")}')" 
+            class="p-2.5 hover:bg-[#162238] cursor-pointer flex justify-between items-center transition"
+          >
+            <div>
+              <p class="text-xs font-bold text-slate-200 uppercase">${alumno.nombre}</p>
+              <span class="text-[10px] text-slate-400 font-mono">${alumno.curso || 'Sin curso'}</span>
+            </div>
+            <i class="fa-solid fa-angle-right text-xs text-blue-400"></i>
+          </div>
+        `).join('');
+
+        autocompleteList.classList.remove('hidden');
+      });
+
+      // Cerrar autocompletado al pulsar fuera
+      document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !autocompleteList.contains(e.target)) {
+          autocompleteList.classList.add('hidden');
+        }
+      });
+    }
+
+    function seleccionarDesdeBusqueda(nombre) {
+      const found = estudiantes.find(e => e.nombre === nombre);
+      if (found) {
+        seleccionarEstudiante(found);
+        document.getElementById('autocomplete-list').classList.add('hidden');
+        document.getElementById('student-search-input').value = found.nombre;
+        document.getElementById('clear-search-btn').classList.remove('hidden');
+      }
+    }
+
+    function limpiarBusqueda() {
+      const searchInput = document.getElementById('student-search-input');
+      searchInput.value = '';
+      document.getElementById('clear-search-btn').classList.add('hidden');
+      document.getElementById('autocomplete-list').classList.add('hidden');
+      searchInput.focus();
+    }
+
+    // ==========================================
+    // CARGAR Y RENDERIZAR DATOS DEL ALUMNO
+    // ==========================================
+    function seleccionarEstudiante(alumno) {
+      estudianteSeleccionado = alumno;
+
+      // Encabezado
+      document.getElementById('student-name-display').innerText = alumno.nombre;
+      document.getElementById('student-course-display').innerText = `Curso: ${alumno.curso || 'No especificado'}`;
+      
+      // Puestos en tarjeta
+      const p1Pos = alumno.puestos && alumno.puestos.periodo_1 !== undefined ? `#${alumno.puestos.periodo_1}` : '--';
+      const p2Pos = alumno.puestos && alumno.puestos.periodo_2 !== undefined ? `#${alumno.puestos.periodo_2}` : '--';
+      const p3Pos = alumno.puestos && alumno.puestos.periodo_3 !== undefined ? `#${alumno.puestos.periodo_3}` : '--';
+
+      document.getElementById('pos-p1').innerText = p1Pos;
+      document.getElementById('pos-p2').innerText = p2Pos;
+      document.getElementById('pos-p3').innerText = p3Pos;
+
+      // Calcular promedio general de las materias disponibles
+      const avgGlobal = calcularPromedioAlumno(alumno);
+      document.getElementById('student-overall-avg').innerText = avgGlobal.toFixed(1);
+
+      // Renderizar secciones
+      renderMateriasBoletin();
+      actualizarCalculosP4();
+    }
+
+    // ==========================================
+    // RENDERIZAR LISTA DE MATERIAS (BOLETÍN)
+    // ==========================================
+    function setFilterPeriod(period) {
+      periodoFiltro = period;
+      ['all', 'p1', 'p2', 'p3'].forEach(p => {
+        const btn = document.getElementById(`btn-period-${p}`);
+        if (p === period) {
+          btn.className = "px-2.5 py-1 bg-blue-600 text-white font-bold border border-blue-500";
+        } else {
+          btn.className = "px-2.5 py-1 bg-[#101726] text-slate-300 border border-[#1f2b42]";
+        }
+      });
+      renderMateriasBoletin();
+    }
+
+    function renderMateriasBoletin() {
+      const container = document.getElementById('subjects-container');
+      if (!estudianteSeleccionado || !estudianteSeleccionado.periodos) {
+        container.innerHTML = '<p class="text-xs text-slate-400 p-4 text-center">No hay notas registradas.</p>';
+        return;
+      }
+
+      const p1 = estudianteSeleccionado.periodos.periodo_1 || {};
+      const p2 = estudianteSeleccionado.periodos.periodo_2 || {};
+      const p3 = estudianteSeleccionado.periodos.periodo_3 || {};
+
+      // Obtener lista única de materias
+      const listaMaterias = Array.from(new Set([
+        ...Object.keys(p1),
+        ...Object.keys(p2),
+        ...Object.keys(p3)
+      ]));
+
+      container.innerHTML = listaMaterias.map(materia => {
+        const n1 = p1[materia] !== undefined ? p1[materia] : null;
+        const n2 = p2[materia] !== undefined ? p2[materia] : null;
+        const n3 = p3[materia] !== undefined ? p3[materia] : null;
+
+        // Notas existentes
+        const notasDisponibles = [n1, n2, n3].filter(n => n !== null);
+        const promMateria = notasDisponibles.length > 0 
+          ? (notasDisponibles.reduce((a, b) => a + b, 0) / notasDisponibles.length).toFixed(1)
+          : '--';
+
+        const colorProm = promMateria >= 60 ? 'text-emerald-400' : 'text-red-400';
+
+        return `
+          <div class="bg-[#101726] border border-[#1c283f] p-3 shadow-sm">
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs font-bold text-slate-100 uppercase tracking-tight">${materia}</span>
+              <span class="text-xs font-mono font-bold ${colorProm}">Prom: ${promMateria}</span>
+            </div>
+
+            <!-- Calificaciones por Período -->
+            <div class="grid grid-cols-3 gap-1.5 text-center font-mono">
+              <div class="p-1.5 bg-[#0a0f1a] border border-[#182338] ${periodoFiltro === 'p1' ? 'ring-1 ring-blue-500' : ''}">
+                <span class="text-[9px] text-slate-400 block">P1</span>
+                <span class="text-xs font-bold ${getNotaColorClass(n1)}">${n1 !== null ? n1 : '-'}</span>
+              </div>
+              <div class="p-1.5 bg-[#0a0f1a] border border-[#182338] ${periodoFiltro === 'p2' ? 'ring-1 ring-blue-500' : ''}">
+                <span class="text-[9px] text-slate-400 block">P2</span>
+                <span class="text-xs font-bold ${getNotaColorClass(n2)}">${n2 !== null ? n2 : '-'}</span>
+              </div>
+              <div class="p-1.5 bg-[#0a0f1a] border border-[#182338] ${periodoFiltro === 'p3' ? 'ring-1 ring-blue-500' : ''}">
+                <span class="text-[9px] text-slate-400 block">P3</span>
+                <span class="text-xs font-bold ${getNotaColorClass(n3)}">${n3 !== null ? n3 : '-'}</span>
+              </div>
+            </div>
+
+            <!-- Barra de progreso visual según promedio acumulado -->
+            <div class="w-full bg-[#090d16] h-1.5 mt-2 overflow-hidden">
+              <div 
+                class="h-full ${promMateria >= 60 ? 'bg-blue-500' : 'bg-red-500'}" 
+                style="width: ${Math.min(100, Math.max(0, promMateria === '--' ? 0 : promMateria))}%"
+              ></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function getNotaColorClass(nota) {
+      if (nota === null) return 'text-slate-500';
+      if (nota >= 80) return 'text-emerald-400';
+      if (nota >= 60) return 'text-blue-400';
+      return 'text-red-400';
+    }
+
+    // ==========================================
+    // SIMULADOR P4: CÁLCULO PARA APROBAR EL AÑO
+    // ==========================================
+    function actualizarCalculosP4() {
+      const container = document.getElementById('p4-calculator-container');
+      const minPassInput = document.getElementById('min-passing-score');
+      
+      let minPorPeriodo = parseFloat(minPassInput.value);
+      if (isNaN(minPorPeriodo) || minPorPeriodo <= 0) minPorPeriodo = 60;
+
+      // Meta: la suma de los 4 periodos debe ser igual o superior a (minPorPeriodo * 4)
+      const metaTotal4Periodos = minPorPeriodo * 4;
+
+      document.getElementById('label-min-pass').innerText = `${minPorPeriodo} pts`;
+      document.getElementById('label-sum-required').innerText = `${metaTotal4Periodos} pts`;
+
+      if (!estudianteSeleccionado || !estudianteSeleccionado.periodos) {
+        container.innerHTML = '<p class="text-xs text-slate-400 text-center">No hay datos disponibles.</p>';
+        return;
+      }
+
+      const p1 = estudianteSeleccionado.periodos.periodo_1 || {};
+      const p2 = estudianteSeleccionado.periodos.periodo_2 || {};
+      const p3 = estudianteSeleccionado.periodos.periodo_3 || {};
+
+      const materias = Array.from(new Set([
+        ...Object.keys(p1),
+        ...Object.keys(p2),
+        ...Object.keys(p3)
+      ]));
+
+      let countAlreadyPassed = 0;
+      let countAchievable = 0;
+      let countCritical = 0;
+
+      container.innerHTML = materias.map(materia => {
+        const n1 = p1[materia] !== undefined ? p1[materia] : 0;
+        const n2 = p2[materia] !== undefined ? p2[materia] : 0;
+        const n3 = p3[materia] !== undefined ? p3[materia] : 0;
+
+        const sumaActual3Periodos = n1 + n2 + n3;
+        // Lo que falta para llegar a la meta de los 4 periodos
+        const requeridoP4 = metaTotal4Periodos - sumaActual3Periodos;
+
+        let badgeStatus = '';
+        let cardBorder = 'border-[#1c283f]';
+        let progressPercent = Math.min(100, Math.round((sumaActual3Periodos / metaTotal4Periodos) * 100));
+
+        if (sumaActual3Periodos >= metaTotal4Periodos) {
+          countAlreadyPassed++;
+          badgeStatus = `<span class="badge-rect bg-emerald-500/20 text-emerald-400 border border-emerald-500/50">¡YA APROBADA! (Necesita 0)</span>`;
+          cardBorder = 'border-emerald-800/40';
+        } else if (requeridoP4 <= 100) {
+          countAchievable++;
+          badgeStatus = `<span class="badge-rect bg-blue-500/20 text-blue-400 border border-blue-500/50">Requiere ${requeridoP4} pts</span>`;
+        } else {
+          countCritical++;
+          badgeStatus = `<span class="badge-rect bg-red-500/20 text-red-400 border border-red-500/50">Requiere ${requeridoP4} pts (Crítico > 100)</span>`;
+          cardBorder = 'border-red-900/60';
+        }
+
+        return `
+          <div class="bg-[#101726] border ${cardBorder} p-3.5 space-y-2">
+            <div class="flex justify-between items-start">
+              <div>
+                <h5 class="text-xs font-bold text-slate-100 uppercase tracking-tight">${materia}</h5>
+                <div class="mt-1">${badgeStatus}</div>
+              </div>
+              <div class="text-right font-mono">
+                <span class="text-[10px] text-slate-400 block">Suma Actual (P1+P2+P3)</span>
+                <span class="text-sm font-extrabold text-white">${sumaActual3Periodos} <span class="text-[11px] font-normal text-slate-400">/ ${metaTotal4Periodos}</span></span>
+              </div>
+            </div>
+
+            <!-- Desglose de sumandos -->
+            <div class="grid grid-cols-4 gap-1 text-center font-mono text-xs pt-1">
+              <div class="bg-[#0b0f1a] py-1 border border-[#172338]">
+                <span class="text-[9px] text-slate-400 block">P1</span>
+                <span class="text-slate-200">${n1}</span>
+              </div>
+              <div class="bg-[#0b0f1a] py-1 border border-[#172338]">
+                <span class="text-[9px] text-slate-400 block">P2</span>
+                <span class="text-slate-200">${n2}</span>
+              </div>
+              <div class="bg-[#0b0f1a] py-1 border border-[#172338]">
+                <span class="text-[9px] text-slate-400 block">P3</span>
+                <span class="text-slate-200">${n3}</span>
+              </div>
+              <div class="bg-[#141e30] py-1 border border-blue-500/40">
+                <span class="text-[9px] text-blue-300 block font-bold">Meta P4</span>
+                <span class="font-bold ${requeridoP4 <= 0 ? 'text-emerald-400' : (requeridoP4 <= 100 ? 'text-blue-400' : 'text-red-400')}">
+                  ${requeridoP4 <= 0 ? '0' : requeridoP4}
+                </span>
+              </div>
+            </div>
+
+            <!-- Barra hacia la meta requerida de los 4 meses -->
+            <div class="pt-1">
+              <div class="flex justify-between text-[10px] font-mono text-slate-400 mb-0.5">
+                <span>Avance hacia la meta anual</span>
+                <span>${progressPercent}%</span>
+              </div>
+              <div class="w-full bg-[#0a0e17] h-2 border border-[#1a253b] overflow-hidden">
+                <div class="h-full ${progressPercent >= 100 ? 'bg-emerald-500' : 'bg-blue-600'}" style="width: ${progressPercent}%"></div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Actualizar contadores del resumen
+      document.getElementById('stat-already-passed').innerText = countAlreadyPassed;
+      document.getElementById('stat-achievable').innerText = countAchievable;
+      document.getElementById('stat-critical').innerText = countCritical;
+    }
+
+    // ==========================================
+    // SISTEMA DE RANKINGS
+    // ==========================================
+    function calcularPromedioAlumno(alumno, periodoKey = null) {
+      if (!alumno.periodos) return 0;
+
+      if (periodoKey) {
+        const notasObj = alumno.periodos[periodoKey];
+        if (!notasObj) return 0;
+        const valores = Object.values(notasObj);
+        if (valores.length === 0) return 0;
+        return valores.reduce((a, b) => a + b, 0) / valores.length;
+      }
+
+      // Promedio global sumando todos los periodos disponibles
+      let sum = 0;
+      let total = 0;
+      ['periodo_1', 'periodo_2', 'periodo_3'].forEach(p => {
+        if (alumno.periodos[p]) {
+          const notas = Object.values(alumno.periodos[p]);
+          sum += notas.reduce((a, b) => a + b, 0);
+          total += notas.length;
+        }
+      });
+      return total > 0 ? (sum / total) : 0;
+    }
+
+    function renderRankingTable() {
+      const container = document.getElementById('ranking-list');
+      const criterio = document.getElementById('ranking-period-select').value;
+
+      let listaOrdenada = [...estudiantes];
+
+      if (criterio === 'promedio_general') {
+        listaOrdenada.sort((a, b) => calcularPromedioAlumno(b) - calcularPromedioAlumno(a));
+      } else {
+        // Ordenar por puesto asignado en el JSON si existe, o por promedio de ese periodo
+        listaOrdenada.sort((a, b) => {
+          const posA = a.puestos && a.puestos[criterio] !== undefined ? a.puestos[criterio] : 999;
+          const posB = b.puestos && b.puestos[criterio] !== undefined ? b.puestos[criterio] : 999;
+          if (posA !== posB) return posA - posB;
+          return calcularPromedioAlumno(b, criterio) - calcularPromedioAlumno(a, criterio);
+        });
+      }
+
+      container.innerHTML = listaOrdenada.map((alumno, index) => {
+        const rank = index + 1;
+        const esSeleccionado = estudianteSeleccionado && estudianteSeleccionado.nombre === alumno.nombre;
+        const prom = (criterio === 'promedio_general') 
+          ? calcularPromedioAlumno(alumno).toFixed(1)
+          : calcularPromedioAlumno(alumno, criterio).toFixed(1);
+
+        let rankBadgeBg = 'bg-[#141e30] text-slate-300 border-[#233552]';
+        let medalIcon = '';
+
+        if (rank === 1) {
+          rankBadgeBg = 'bg-amber-500/20 text-amber-400 border-amber-500/60 font-black';
+          medalIcon = '<i class="fa-solid fa-crown text-amber-400 mr-1 text-xs"></i>';
+        } else if (rank === 2) {
+          rankBadgeBg = 'bg-slate-300/20 text-slate-200 border-slate-300/60 font-black';
+          medalIcon = '<i class="fa-solid fa-medal text-slate-300 mr-1 text-xs"></i>';
+        } else if (rank === 3) {
+          rankBadgeBg = 'bg-amber-700/20 text-amber-500 border-amber-700/60 font-black';
+          medalIcon = '<i class="fa-solid fa-award text-amber-600 mr-1 text-xs"></i>';
+        }
+
+        return `
+          <div 
+            onclick="seleccionarDesdeRanking('${alumno.nombre.replace(/'/g, "\\'")}')" 
+            class="p-2.5 bg-[#101726] border ${esSeleccionado ? 'border-blue-500 ring-1 ring-blue-500' : 'border-[#1a263d]'} flex items-center justify-between cursor-pointer hover:bg-[#152033] transition"
+          >
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 flex items-center justify-center border font-mono text-xs font-bold ${rankBadgeBg}">
+                ${rank}
+              </span>
+              <div>
+                <p class="text-xs font-bold text-slate-100 uppercase flex items-center">
+                  ${medalIcon} ${alumno.nombre}
+                </p>
+                <span class="text-[10px] text-slate-400 font-mono">
+                  ${alumno.curso || ''} ${alumno.puestos && alumno.puestos[criterio] ? `• Puesto original: #${alumno.puestos[criterio]}` : ''}
+                </span>
+              </div>
+            </div>
+
+            <div class="text-right font-mono">
+              <span class="text-xs font-black text-blue-400">${prom}</span>
+              <span class="text-[9px] text-slate-400 block uppercase">Prom</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function seleccionarDesdeRanking(nombre) {
+      const alumno = estudiantes.find(e => e.nombre === nombre);
+      if (alumno) {
+        seleccionarEstudiante(alumno);
+        switchTab('boletin');
+      }
+    }
+
+    // ==========================================
+    // CAMBIO DE PESTAÑAS
+    // ==========================================
+    function switchTab(tabId) {
+      const tabs = ['boletin', 'simulador', 'ranking'];
+      tabs.forEach(t => {
+        const content = document.getElementById(`tab-content-${t}`);
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (t === tabId) {
+          content.classList.remove('hidden');
+          btn.className = 'py-3 text-center border-b-2 border-blue-500 text-blue-400 bg-blue-500/10 transition';
+        } else {
+          content.classList.add('hidden');
+          btn.className = 'py-3 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition';
+        }
+      });
+
+      if (tabId === 'ranking') {
+        renderRankingTable();
+      }
+    }
+
+    // ==========================================
+    // MODAL DE CONFIGURACIÓN DE URL
+    // ==========================================
+    function toggleConfigModal() {
+      const modal = document.getElementById('config-modal');
+      modal.classList.toggle('hidden');
+    }
+
+    function guardarYRecargarUrl() {
+      const inputUrl = document.getElementById('json-url-input').value.trim();
+      jsonEndpoint = inputUrl || DEFAULT_REMOTE_URL;
+      localStorage.setItem('grades_json_url', jsonEndpoint);
+      toggleConfigModal();
+      cargarDatos();
+    }
+
+    // Inicio automático al cargar
+    window.addEventListener('DOMContentLoaded', () => {
+      cargarDatos();
+    });
+  </script>
+</body>
+</html>
