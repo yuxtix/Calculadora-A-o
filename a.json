@@ -1,0 +1,1906 @@
+[
+  {
+    "nombre": "ACOSTA TORRES ISABELLA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 4,
+      "periodo_2": 2,
+      "periodo_3": 5
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 99,
+        "Química": 85,
+        "EDUCACIÓN ARTÍSTICA": 99,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 99,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 98,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 99,
+        "Lengua Castellana": 68,
+        "Idioma Extranjero (Inglés)": 96,
+        "CÁLCULO": 96,
+        "TECNOLOGÍA E INFORMÁTICA": 96,
+        "Contabilidad": 89,
+        "FILOSOFÍA": 98,
+        "COMPORTAMIENTO SOCIAL": 95
+      },
+      "periodo_2": {
+        "Física": 98,
+        "Química": 94,
+        "EDUCACIÓN ARTÍSTICA": 89,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 89,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 84,
+        "Idioma Extranjero (Inglés)": 86,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 97,
+        "Contabilidad": 100,
+        "FILOSOFÍA": 99,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 100,
+        "Química": 93,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 84,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 73,
+        "Idioma Extranjero (Inglés)": 94,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 97,
+        "Contabilidad": 91,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "AGUIRRE AMAYA LEIDY PAOLA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 16,
+      "periodo_2": 9,
+      "periodo_3": 16
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 84,
+        "Química": 79,
+        "EDUCACIÓN ARTÍSTICA": 98,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 89,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 81,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 89,
+        "Lengua Castellana": 66,
+        "Idioma Extranjero (Inglés)": 83,
+        "CÁLCULO": 74,
+        "TECNOLOGÍA E INFORMÁTICA": 91,
+        "Contabilidad": 93,
+        "FILOSOFÍA": 96,
+        "COMPORTAMIENTO SOCIAL": 95
+      },
+      "periodo_2": {
+        "Física": 85,
+        "Química": 87,
+        "EDUCACIÓN ARTÍSTICA": 88,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 83,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 67,
+        "Idioma Extranjero (Inglés)": 76,
+        "CÁLCULO": 95,
+        "TECNOLOGÍA E INFORMÁTICA": 95,
+        "Contabilidad": 91,
+        "FILOSOFÍA": 98,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 99,
+        "Química": 83,
+        "EDUCACIÓN ARTÍSTICA": 88,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 99,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 68,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 99,
+        "Lengua Castellana": 82,
+        "Idioma Extranjero (Inglés)": 87,
+        "CÁLCULO": 94,
+        "TECNOLOGÍA E INFORMÁTICA": 80,
+        "Contabilidad": 72,
+        "FILOSOFÍA": 96,
+        "COMPORTAMIENTO SOCIAL": 95
+      }
+    }
+  },
+  {
+    "nombre": "APONTE CARDENAS  VALERIE",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 6,
+      "periodo_2": 22,
+      "periodo_3": 20
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 76,
+        "Química": 79,
+        "EDUCACIÓN ARTÍSTICA": 98,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 98,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 80,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 98,
+        "Lengua Castellana": 78,
+        "Idioma Extranjero (Inglés)": 94,
+        "CÁLCULO": 95,
+        "TECNOLOGÍA E INFORMÁTICA": 93,
+        "Contabilidad": 87,
+        "FILOSOFÍA": 97,
+        "COMPORTAMIENTO SOCIAL": 90
+      },
+      "periodo_2": {
+        "Física": 68,
+        "Química": 78,
+        "EDUCACIÓN ARTÍSTICA": 85,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 95,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 65,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 95,
+        "Lengua Castellana": 72,
+        "Idioma Extranjero (Inglés)": 85,
+        "CÁLCULO": 83,
+        "TECNOLOGÍA E INFORMÁTICA": 90,
+        "Contabilidad": 83,
+        "FILOSOFÍA": 91,
+        "COMPORTAMIENTO SOCIAL": 80
+      },
+      "periodo_3": {
+        "Física": 86,
+        "Química": 61,
+        "EDUCACIÓN ARTÍSTICA": 99,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 99,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 49,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 99,
+        "Lengua Castellana": 75,
+        "Idioma Extranjero (Inglés)": 96,
+        "CÁLCULO": 85,
+        "TECNOLOGÍA E INFORMÁTICA": 82,
+        "Contabilidad": 87,
+        "FILOSOFÍA": 98,
+        "COMPORTAMIENTO SOCIAL": 95
+      }
+    }
+  },
+  {
+    "nombre": "BARRETO VARGAS DANNA ESTE",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 7,
+      "periodo_2": 10,
+      "periodo_3": 8
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 83,
+        "Química": 93,
+        "EDUCACIÓN ARTÍSTICA": 91,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 68,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 74,
+        "Idioma Extranjero (Inglés)": 95,
+        "CÁLCULO": 88,
+        "TECNOLOGÍA E INFORMÁTICA": 85,
+        "Contabilidad": 95,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 79,
+        "Química": 81,
+        "EDUCACIÓN ARTÍSTICA": 89,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 96,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 70,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 96,
+        "Lengua Castellana": 83,
+        "Idioma Extranjero (Inglés)": 90,
+        "CÁLCULO": 89,
+        "TECNOLOGÍA E INFORMÁTICA": 98,
+        "Contabilidad": 94,
+        "FILOSOFÍA": 98,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 88,
+        "Química": 82,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 70,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 85,
+        "Idioma Extranjero (Inglés)": 98,
+        "CÁLCULO": 91,
+        "TECNOLOGÍA E INFORMÁTICA": 94,
+        "Contabilidad": 80,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "CARDENAS AMADO DANNA NIKO",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 15,
+      "periodo_2": 7,
+      "periodo_3": 19
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 90,
+        "Química": 78,
+        "EDUCACIÓN ARTÍSTICA": 90,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 65,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 83,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 75,
+        "Lengua Castellana": 81,
+        "Idioma Extranjero (Inglés)": 85,
+        "CÁLCULO": 93,
+        "TECNOLOGÍA E INFORMÁTICA": 98,
+        "Contabilidad": 95,
+        "FILOSOFÍA": 98,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 100,
+        "Química": 87,
+        "EDUCACIÓN ARTÍSTICA": 87,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 94,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 82,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 94,
+        "Lengua Castellana": 84,
+        "Idioma Extranjero (Inglés)": 83,
+        "CÁLCULO": 89,
+        "TECNOLOGÍA E INFORMÁTICA": 93,
+        "Contabilidad": 91,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 92,
+        "Química": 83,
+        "EDUCACIÓN ARTÍSTICA": 98,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 98,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 76,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 98,
+        "Lengua Castellana": 72,
+        "Idioma Extranjero (Inglés)": 86,
+        "CÁLCULO": 76,
+        "TECNOLOGÍA E INFORMÁTICA": 74,
+        "Contabilidad": 82,
+        "FILOSOFÍA": 95,
+        "COMPORTAMIENTO SOCIAL": 90
+      }
+    }
+  },
+  {
+    "nombre": "CASTRO ESCOBAR DARMA JANA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 13,
+      "periodo_2": 12,
+      "periodo_3": 13
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 81,
+        "Química": 86,
+        "EDUCACIÓN ARTÍSTICA": 70,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 83,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 82,
+        "Idioma Extranjero (Inglés)": 77,
+        "CÁLCULO": 83,
+        "TECNOLOGÍA E INFORMÁTICA": 95,
+        "Contabilidad": 91,
+        "FILOSOFÍA": 97,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 100,
+        "Química": 81,
+        "EDUCACIÓN ARTÍSTICA": 90,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 93,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 85,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 93,
+        "Lengua Castellana": 80,
+        "Idioma Extranjero (Inglés)": 83,
+        "CÁLCULO": 88,
+        "TECNOLOGÍA E INFORMÁTICA": 78,
+        "Contabilidad": 91,
+        "FILOSOFÍA": 94,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 84,
+        "Química": 76,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 78,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 87,
+        "Idioma Extranjero (Inglés)": 89,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 72,
+        "Contabilidad": 69,
+        "FILOSOFÍA": 98,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "CASTRO HERRERA KAROL NICO",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 8,
+      "periodo_2": 5,
+      "periodo_3": 6
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 100,
+        "Química": 87,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 70,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 83,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 75,
+        "Lengua Castellana": 79,
+        "Idioma Extranjero (Inglés)": 79,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 100,
+        "Contabilidad": 95,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 100,
+        "Química": 86,
+        "EDUCACIÓN ARTÍSTICA": 89,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 96,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 84,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 96,
+        "Lengua Castellana": 82,
+        "Idioma Extranjero (Inglés)": 84,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 98,
+        "Contabilidad": 93,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 100,
+        "Química": 84,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 78,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 89,
+        "Idioma Extranjero (Inglés)": 95,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 95,
+        "Contabilidad": 89,
+        "FILOSOFÍA": 95,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "CUELLAR BARRERA JULIAN DA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 12,
+      "periodo_2": 13,
+      "periodo_3": 15
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 80,
+        "Química": 86,
+        "EDUCACIÓN ARTÍSTICA": 95,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 96,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 86,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 96,
+        "Lengua Castellana": 60,
+        "Idioma Extranjero (Inglés)": 89,
+        "CÁLCULO": 92,
+        "TECNOLOGÍA E INFORMÁTICA": 91,
+        "Contabilidad": 80,
+        "FILOSOFÍA": 96,
+        "COMPORTAMIENTO SOCIAL": 85
+      },
+      "periodo_2": {
+        "Física": 98,
+        "Química": 85,
+        "EDUCACIÓN ARTÍSTICA": 88,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 91,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 88,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 91,
+        "Lengua Castellana": 81,
+        "Idioma Extranjero (Inglés)": 82,
+        "CÁLCULO": 92,
+        "TECNOLOGÍA E INFORMÁTICA": 80,
+        "Contabilidad": 83,
+        "FILOSOFÍA": 96,
+        "COMPORTAMIENTO SOCIAL": 95
+      },
+      "periodo_3": {
+        "Física": 89,
+        "Química": 79,
+        "EDUCACIÓN ARTÍSTICA": 85,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 93,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 75,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 93,
+        "Lengua Castellana": 76,
+        "Idioma Extranjero (Inglés)": 92,
+        "CÁLCULO": 94,
+        "TECNOLOGÍA E INFORMÁTICA": 84,
+        "Contabilidad": 88,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "DIAZ PILLIMUE CARLOS ANDR",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 26,
+      "periodo_2": 29,
+      "periodo_3": 28
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 63,
+        "Química": 60,
+        "EDUCACIÓN ARTÍSTICA": 83,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 75,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 84,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 75,
+        "Lengua Castellana": 54,
+        "Idioma Extranjero (Inglés)": 62,
+        "CÁLCULO": 80,
+        "TECNOLOGÍA E INFORMÁTICA": 87,
+        "Contabilidad": 75,
+        "FILOSOFÍA": 92,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 66,
+        "Química": 58,
+        "EDUCACIÓN ARTÍSTICA": 89,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 91,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 84,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 91,
+        "Lengua Castellana": 60,
+        "Idioma Extranjero (Inglés)": 64,
+        "CÁLCULO": 61,
+        "TECNOLOGÍA E INFORMÁTICA": 75,
+        "Contabilidad": 77,
+        "FILOSOFÍA": 89,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 83,
+        "Química": 64,
+        "EDUCACIÓN ARTÍSTICA": 85,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 60,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 89,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 75,
+        "Lengua Castellana": 75,
+        "Idioma Extranjero (Inglés)": 64,
+        "CÁLCULO": 62,
+        "TECNOLOGÍA E INFORMÁTICA": 89,
+        "Contabilidad": 70,
+        "FILOSOFÍA": 91,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "DIAZ RIOS AHSLI YERALDIN",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 19,
+      "periodo_2": 25,
+      "periodo_3": 21
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 82,
+        "Química": 69,
+        "EDUCACIÓN ARTÍSTICA": 92,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 90,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 98,
+        "Lengua Castellana": 75,
+        "Idioma Extranjero (Inglés)": 69,
+        "CÁLCULO": 72,
+        "TECNOLOGÍA E INFORMÁTICA": 80,
+        "Contabilidad": 69,
+        "FILOSOFÍA": 97,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 73,
+        "Química": 80,
+        "EDUCACIÓN ARTÍSTICA": 90,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 66,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 85,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 66,
+        "Lengua Castellana": 73,
+        "Idioma Extranjero (Inglés)": 65,
+        "CÁLCULO": 95,
+        "TECNOLOGÍA E INFORMÁTICA": 93,
+        "Contabilidad": 72,
+        "FILOSOFÍA": 97,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 86,
+        "Química": 77,
+        "EDUCACIÓN ARTÍSTICA": 99,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 99,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 83,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 99,
+        "Lengua Castellana": 75,
+        "Idioma Extranjero (Inglés)": 66,
+        "CÁLCULO": 64,
+        "TECNOLOGÍA E INFORMÁTICA": 83,
+        "Contabilidad": 86,
+        "FILOSOFÍA": 94,
+        "COMPORTAMIENTO SOCIAL": 95
+      }
+    }
+  },
+  {
+    "nombre": "GONZALEZ PRIETO DANIEL ES",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 30,
+      "periodo_2": 32,
+      "periodo_3": 29
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 33,
+        "Química": 43,
+        "EDUCACIÓN ARTÍSTICA": 50,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 50,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 64,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 55,
+        "Lengua Castellana": 39,
+        "Idioma Extranjero (Inglés)": 51,
+        "CÁLCULO": 40,
+        "TECNOLOGÍA E INFORMÁTICA": 68,
+        "Contabilidad": 36,
+        "FILOSOFÍA": 68,
+        "COMPORTAMIENTO SOCIAL": 20
+      },
+      "periodo_2": {
+        "Física": 60,
+        "Química": 51,
+        "EDUCACIÓN ARTÍSTICA": 76,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 45,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 66,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 60,
+        "Lengua Castellana": 60,
+        "Idioma Extranjero (Inglés)": 60,
+        "CÁLCULO": 60,
+        "TECNOLOGÍA E INFORMÁTICA": 70,
+        "Contabilidad": 60,
+        "FILOSOFÍA": 77,
+        "COMPORTAMIENTO SOCIAL": 70
+      },
+      "periodo_3": {
+        "Física": 80,
+        "Química": 66,
+        "EDUCACIÓN ARTÍSTICA": 75,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 68,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 70,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 68,
+        "Lengua Castellana": 66,
+        "Idioma Extranjero (Inglés)": 81,
+        "CÁLCULO": 78,
+        "TECNOLOGÍA E INFORMÁTICA": 68,
+        "Contabilidad": 62,
+        "FILOSOFÍA": 84,
+        "COMPORTAMIENTO SOCIAL": 90
+      }
+    }
+  },
+  {
+    "nombre": "GRISALES ARROYO JUAN FELI",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 29,
+      "periodo_2": 30,
+      "periodo_3": 32
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 60,
+        "Química": 60,
+        "EDUCACIÓN ARTÍSTICA": 63,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 63,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 81,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 73,
+        "Lengua Castellana": 50,
+        "Idioma Extranjero (Inglés)": 71,
+        "CÁLCULO": 60,
+        "TECNOLOGÍA E INFORMÁTICA": 74,
+        "Contabilidad": 62,
+        "FILOSOFÍA": 75,
+        "COMPORTAMIENTO SOCIAL": 90
+      },
+      "periodo_2": {
+        "Física": 64,
+        "Química": 53,
+        "EDUCACIÓN ARTÍSTICA": 89,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 65,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 78,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 73,
+        "Lengua Castellana": 60,
+        "Idioma Extranjero (Inglés)": 69,
+        "CÁLCULO": 91,
+        "TECNOLOGÍA E INFORMÁTICA": 73,
+        "Contabilidad": 69,
+        "FILOSOFÍA": 88,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 60,
+        "Química": 60,
+        "EDUCACIÓN ARTÍSTICA": 68,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 60,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 72,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 68,
+        "Lengua Castellana": 60,
+        "Idioma Extranjero (Inglés)": 55,
+        "CÁLCULO": 60,
+        "TECNOLOGÍA E INFORMÁTICA": 65,
+        "Contabilidad": 60,
+        "FILOSOFÍA": 86,
+        "COMPORTAMIENTO SOCIAL": 90
+      }
+    }
+  },
+  {
+    "nombre": "GUAQUEZ TRIANA ISABELLA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 21,
+      "periodo_2": 19,
+      "periodo_3": 23
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 74,
+        "Química": 67,
+        "EDUCACIÓN ARTÍSTICA": 63,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 95,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 64,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 95,
+        "Lengua Castellana": 71,
+        "Idioma Extranjero (Inglés)": 93,
+        "CÁLCULO": 88,
+        "TECNOLOGÍA E INFORMÁTICA": 84,
+        "Contabilidad": 94,
+        "FILOSOFÍA": 92,
+        "COMPORTAMIENTO SOCIAL": 85
+      },
+      "periodo_2": {
+        "Física": 81,
+        "Química": 84,
+        "EDUCACIÓN ARTÍSTICA": 91,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 94,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 69,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 94,
+        "Lengua Castellana": 73,
+        "Idioma Extranjero (Inglés)": 93,
+        "CÁLCULO": 93,
+        "TECNOLOGÍA E INFORMÁTICA": 86,
+        "Contabilidad": 83,
+        "FILOSOFÍA": 96,
+        "COMPORTAMIENTO SOCIAL": 95
+      },
+      "periodo_3": {
+        "Física": 77,
+        "Química": 65,
+        "EDUCACIÓN ARTÍSTICA": 98,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 98,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 49,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 98,
+        "Lengua Castellana": 81,
+        "Idioma Extranjero (Inglés)": 94,
+        "CÁLCULO": 83,
+        "TECNOLOGÍA E INFORMÁTICA": 86,
+        "Contabilidad": 75,
+        "FILOSOFÍA": 96,
+        "COMPORTAMIENTO SOCIAL": 90
+      }
+    }
+  },
+  {
+    "nombre": "LEON MORA YISED DAYANA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 23,
+      "periodo_2": 21,
+      "periodo_3": 23
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 81,
+        "Química": 71,
+        "EDUCACIÓN ARTÍSTICA": 65,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 64,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 79,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 74,
+        "Lengua Castellana": 82,
+        "Idioma Extranjero (Inglés)": 75,
+        "CÁLCULO": 91,
+        "TECNOLOGÍA E INFORMÁTICA": 84,
+        "Contabilidad": 92,
+        "FILOSOFÍA": 98,
+        "COMPORTAMIENTO SOCIAL": 95
+      },
+      "periodo_2": {
+        "Física": 76,
+        "Química": 64,
+        "EDUCACIÓN ARTÍSTICA": 89,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 99,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 89,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 99,
+        "Lengua Castellana": 85,
+        "Idioma Extranjero (Inglés)": 73,
+        "CÁLCULO": 74,
+        "TECNOLOGÍA E INFORMÁTICA": 82,
+        "Contabilidad": 90,
+        "FILOSOFÍA": 93,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 81,
+        "Química": 73,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 60,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 83,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 75,
+        "Lengua Castellana": 91,
+        "Idioma Extranjero (Inglés)": 85,
+        "CÁLCULO": 68,
+        "TECNOLOGÍA E INFORMÁTICA": 89,
+        "Contabilidad": 95,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "LOPEZ ARAQUE DANA SOFIA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 27,
+      "periodo_2": 26,
+      "periodo_3": 31
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 69,
+        "Química": 60,
+        "EDUCACIÓN ARTÍSTICA": 63,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 95,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 96,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 95,
+        "Lengua Castellana": 52,
+        "Idioma Extranjero (Inglés)": 63,
+        "CÁLCULO": 60,
+        "TECNOLOGÍA E INFORMÁTICA": 78,
+        "Contabilidad": 72,
+        "FILOSOFÍA": 85,
+        "COMPORTAMIENTO SOCIAL": 90
+      },
+      "periodo_2": {
+        "Física": 81,
+        "Química": 51,
+        "EDUCACIÓN ARTÍSTICA": 93,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 99,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 85,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 99,
+        "Lengua Castellana": 60,
+        "Idioma Extranjero (Inglés)": 67,
+        "CÁLCULO": 94,
+        "TECNOLOGÍA E INFORMÁTICA": 67,
+        "Contabilidad": 72,
+        "FILOSOFÍA": 66,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 66,
+        "Química": 61,
+        "EDUCACIÓN ARTÍSTICA": 73,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 95,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 90,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 95,
+        "Lengua Castellana": 60,
+        "Idioma Extranjero (Inglés)": 61,
+        "CÁLCULO": 60,
+        "TECNOLOGÍA E INFORMÁTICA": 64,
+        "Contabilidad": 65,
+        "FILOSOFÍA": 75,
+        "COMPORTAMIENTO SOCIAL": 80
+      }
+    }
+  },
+  {
+    "nombre": "MONTEJO PALENCIA EDWAR LE",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 25,
+      "periodo_2": 27,
+      "periodo_3": 27
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 60,
+        "Química": 71,
+        "EDUCACIÓN ARTÍSTICA": 64,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 96,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 89,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 96,
+        "Lengua Castellana": 76,
+        "Idioma Extranjero (Inglés)": 62,
+        "CÁLCULO": 73,
+        "TECNOLOGÍA E INFORMÁTICA": 72,
+        "Contabilidad": 61,
+        "FILOSOFÍA": 87,
+        "COMPORTAMIENTO SOCIAL": 90
+      },
+      "periodo_2": {
+        "Física": 65,
+        "Química": 64,
+        "EDUCACIÓN ARTÍSTICA": 88,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 91,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 83,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 91,
+        "Lengua Castellana": 60,
+        "Idioma Extranjero (Inglés)": 67,
+        "CÁLCULO": 79,
+        "TECNOLOGÍA E INFORMÁTICA": 80,
+        "Contabilidad": 65,
+        "FILOSOFÍA": 93,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 74,
+        "Química": 72,
+        "EDUCACIÓN ARTÍSTICA": 98,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 90,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 84,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 90,
+        "Lengua Castellana": 72,
+        "Idioma Extranjero (Inglés)": 61,
+        "CÁLCULO": 62,
+        "TECNOLOGÍA E INFORMÁTICA": 76,
+        "Contabilidad": 68,
+        "FILOSOFÍA": 88,
+        "COMPORTAMIENTO SOCIAL": 90
+      }
+    }
+  },
+  {
+    "nombre": "NIÑO BERNAL  BRYAN STEVEN",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 2,
+      "periodo_2": 1,
+      "periodo_3": 1
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 98,
+        "Química": 84,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 91,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 84,
+        "Idioma Extranjero (Inglés)": 92,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 98,
+        "Contabilidad": 94,
+        "FILOSOFÍA": 96,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 100,
+        "Química": 95,
+        "EDUCACIÓN ARTÍSTICA": 96,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 98,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 90,
+        "Idioma Extranjero (Inglés)": 93,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 95,
+        "Contabilidad": 94,
+        "FILOSOFÍA": 98,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 100,
+        "Química": 84,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 98,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 95,
+        "Idioma Extranjero (Inglés)": 95,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 95,
+        "Contabilidad": 95,
+        "FILOSOFÍA": 95,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "ORTIZ PINZON OSCAR SANTIA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 10,
+      "periodo_2": 16,
+      "periodo_3": 10
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 91,
+        "Química": 84,
+        "EDUCACIÓN ARTÍSTICA": 95,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 95,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 80,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 95,
+        "Lengua Castellana": 70,
+        "Idioma Extranjero (Inglés)": 84,
+        "CÁLCULO": 94,
+        "TECNOLOGÍA E INFORMÁTICA": 95,
+        "Contabilidad": 85,
+        "FILOSOFÍA": 94,
+        "COMPORTAMIENTO SOCIAL": 80
+      },
+      "periodo_2": {
+        "Física": 83,
+        "Química": 89,
+        "EDUCACIÓN ARTÍSTICA": 88,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 90,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 83,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 90,
+        "Lengua Castellana": 69,
+        "Idioma Extranjero (Inglés)": 89,
+        "CÁLCULO": 92,
+        "TECNOLOGÍA E INFORMÁTICA": 93,
+        "Contabilidad": 85,
+        "FILOSOFÍA": 96,
+        "COMPORTAMIENTO SOCIAL": 95
+      },
+      "periodo_3": {
+        "Física": 92,
+        "Química": 69,
+        "EDUCACIÓN ARTÍSTICA": 98,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 98,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 93,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 98,
+        "Lengua Castellana": 87,
+        "Idioma Extranjero (Inglés)": 94,
+        "CÁLCULO": 82,
+        "TECNOLOGÍA E INFORMÁTICA": 91,
+        "Contabilidad": 82,
+        "FILOSOFÍA": 96,
+        "COMPORTAMIENTO SOCIAL": 90
+      }
+    }
+  },
+  {
+    "nombre": "PERDOMO MEDRANO RAUL ANDR",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 5,
+      "periodo_2": 17,
+      "periodo_3": 17
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 93,
+        "Química": 76,
+        "EDUCACIÓN ARTÍSTICA": 99,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 98,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 90,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 98,
+        "Lengua Castellana": 76,
+        "Idioma Extranjero (Inglés)": 91,
+        "CÁLCULO": 96,
+        "TECNOLOGÍA E INFORMÁTICA": 85,
+        "Contabilidad": 77,
+        "FILOSOFÍA": 95,
+        "COMPORTAMIENTO SOCIAL": 95
+      },
+      "periodo_2": {
+        "Física": 89,
+        "Química": 88,
+        "EDUCACIÓN ARTÍSTICA": 87,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 89,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 81,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 89,
+        "Lengua Castellana": 64,
+        "Idioma Extranjero (Inglés)": 94,
+        "CÁLCULO": 96,
+        "TECNOLOGÍA E INFORMÁTICA": 92,
+        "Contabilidad": 85,
+        "FILOSOFÍA": 89,
+        "COMPORTAMIENTO SOCIAL": 90
+      },
+      "periodo_3": {
+        "Física": 93,
+        "Química": 83,
+        "EDUCACIÓN ARTÍSTICA": 83,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 83,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 88,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 83,
+        "Lengua Castellana": 86,
+        "Idioma Extranjero (Inglés)": 94,
+        "CÁLCULO": 93,
+        "TECNOLOGÍA E INFORMÁTICA": 84,
+        "Contabilidad": 82,
+        "FILOSOFÍA": 91,
+        "COMPORTAMIENTO SOCIAL": 90
+      }
+    }
+  },
+  {
+    "nombre": "PEREZ OCHOA HEIDER SANTIA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 14,
+      "periodo_2": 18,
+      "periodo_3": 12
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 84,
+        "Química": 63,
+        "EDUCACIÓN ARTÍSTICA": 89,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 95,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 89,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 95,
+        "Lengua Castellana": 77,
+        "Idioma Extranjero (Inglés)": 90,
+        "CÁLCULO": 84,
+        "TECNOLOGÍA E INFORMÁTICA": 88,
+        "Contabilidad": 85,
+        "FILOSOFÍA": 93,
+        "COMPORTAMIENTO SOCIAL": 90
+      },
+      "periodo_2": {
+        "Física": 92,
+        "Química": 82,
+        "EDUCACIÓN ARTÍSTICA": 87,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 93,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 86,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 93,
+        "Lengua Castellana": 80,
+        "Idioma Extranjero (Inglés)": 87,
+        "CÁLCULO": 91,
+        "TECNOLOGÍA E INFORMÁTICA": 81,
+        "Contabilidad": 84,
+        "FILOSOFÍA": 86,
+        "COMPORTAMIENTO SOCIAL": 90
+      },
+      "periodo_3": {
+        "Física": 100,
+        "Química": 77,
+        "EDUCACIÓN ARTÍSTICA": 85,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 85,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 85,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 85,
+        "Lengua Castellana": 87,
+        "Idioma Extranjero (Inglés)": 93,
+        "CÁLCULO": 92,
+        "TECNOLOGÍA E INFORMÁTICA": 90,
+        "Contabilidad": 84,
+        "FILOSOFÍA": 96,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "QUIROGA HERRERA JUAN FELI",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 18,
+      "periodo_2": 14,
+      "periodo_3": 9
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 81,
+        "Química": 65,
+        "EDUCACIÓN ARTÍSTICA": 95,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 95,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 86,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 95,
+        "Lengua Castellana": 70,
+        "Idioma Extranjero (Inglés)": 75,
+        "CÁLCULO": 93,
+        "TECNOLOGÍA E INFORMÁTICA": 88,
+        "Contabilidad": 80,
+        "FILOSOFÍA": 89,
+        "COMPORTAMIENTO SOCIAL": 85
+      },
+      "periodo_2": {
+        "Física": 74,
+        "Química": 81,
+        "EDUCACIÓN ARTÍSTICA": 89,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 99,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 89,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 99,
+        "Lengua Castellana": 84,
+        "Idioma Extranjero (Inglés)": 74,
+        "CÁLCULO": 96,
+        "TECNOLOGÍA E INFORMÁTICA": 91,
+        "Contabilidad": 83,
+        "FILOSOFÍA": 95,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 93,
+        "Química": 72,
+        "EDUCACIÓN ARTÍSTICA": 85,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 81,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 89,
+        "Idioma Extranjero (Inglés)": 81,
+        "CÁLCULO": 98,
+        "TECNOLOGÍA E INFORMÁTICA": 96,
+        "Contabilidad": 94,
+        "FILOSOFÍA": 96,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "RAMIREZ CASTRO JEREMY EST",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 17,
+      "periodo_2": 11,
+      "periodo_3": 18
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 90,
+        "Química": 60,
+        "EDUCACIÓN ARTÍSTICA": 93,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 93,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 91,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 85,
+        "Lengua Castellana": 77,
+        "Idioma Extranjero (Inglés)": 79,
+        "CÁLCULO": 90,
+        "TECNOLOGÍA E INFORMÁTICA": 77,
+        "Contabilidad": 87,
+        "FILOSOFÍA": 91,
+        "COMPORTAMIENTO SOCIAL": 70
+      },
+      "periodo_2": {
+        "Física": 93,
+        "Química": 84,
+        "EDUCACIÓN ARTÍSTICA": 86,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 98,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 86,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 98,
+        "Lengua Castellana": 71,
+        "Idioma Extranjero (Inglés)": 82,
+        "CÁLCULO": 96,
+        "TECNOLOGÍA E INFORMÁTICA": 85,
+        "Contabilidad": 84,
+        "FILOSOFÍA": 98,
+        "COMPORTAMIENTO SOCIAL": 90
+      },
+      "periodo_3": {
+        "Física": 82,
+        "Química": 80,
+        "EDUCACIÓN ARTÍSTICA": 98,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 98,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 93,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 98,
+        "Lengua Castellana": 80,
+        "Idioma Extranjero (Inglés)": 92,
+        "CÁLCULO": 61,
+        "TECNOLOGÍA E INFORMÁTICA": 93,
+        "Contabilidad": 76,
+        "FILOSOFÍA": 90,
+        "COMPORTAMIENTO SOCIAL": 90
+      }
+    }
+  },
+  {
+    "nombre": "ROBAYO PULIDO DAVID SANTI",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 24,
+      "periodo_2": 28,
+      "periodo_3": 26
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 68,
+        "Química": 80,
+        "EDUCACIÓN ARTÍSTICA": 64,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 89,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 88,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 89,
+        "Lengua Castellana": 62,
+        "Idioma Extranjero (Inglés)": 79,
+        "CÁLCULO": 76,
+        "TECNOLOGÍA E INFORMÁTICA": 93,
+        "Contabilidad": 74,
+        "FILOSOFÍA": 93,
+        "COMPORTAMIENTO SOCIAL": 90
+      },
+      "periodo_2": {
+        "Física": 64,
+        "Química": 63,
+        "EDUCACIÓN ARTÍSTICA": 83,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 81,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 80,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 81,
+        "Lengua Castellana": 77,
+        "Idioma Extranjero (Inglés)": 76,
+        "CÁLCULO": 84,
+        "TECNOLOGÍA E INFORMÁTICA": 74,
+        "Contabilidad": 60,
+        "FILOSOFÍA": 89,
+        "COMPORTAMIENTO SOCIAL": 75
+      },
+      "periodo_3": {
+        "Física": 76,
+        "Química": 73,
+        "EDUCACIÓN ARTÍSTICA": 98,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 83,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 79,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 83,
+        "Lengua Castellana": 73,
+        "Idioma Extranjero (Inglés)": 90,
+        "CÁLCULO": 51,
+        "TECNOLOGÍA E INFORMÁTICA": 66,
+        "Contabilidad": 75,
+        "FILOSOFÍA": 93,
+        "COMPORTAMIENTO SOCIAL": 90
+      }
+    }
+  },
+  {
+    "nombre": "RODRIGUEZ ALFONSO JIMENA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 3,
+      "periodo_2": 3,
+      "periodo_3": 2
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 100,
+        "Química": 86,
+        "EDUCACIÓN ARTÍSTICA": 99,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 75,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 78,
+        "Idioma Extranjero (Inglés)": 97,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 98,
+        "Contabilidad": 100,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 100,
+        "Química": 83,
+        "EDUCACIÓN ARTÍSTICA": 90,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 85,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 84,
+        "Idioma Extranjero (Inglés)": 93,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 95,
+        "Contabilidad": 100,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 100,
+        "Química": 86,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 90,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 95,
+        "Idioma Extranjero (Inglés)": 98,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 89,
+        "Contabilidad": 98,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "ROJAS CASTRO KAREN SOFIA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 9,
+      "periodo_2": 7,
+      "periodo_3": 7
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 98,
+        "Química": 73,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 85,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 66,
+        "Idioma Extranjero (Inglés)": 72,
+        "CÁLCULO": 85,
+        "TECNOLOGÍA E INFORMÁTICA": 93,
+        "Contabilidad": 95,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 100,
+        "Química": 93,
+        "EDUCACIÓN ARTÍSTICA": 89,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 84,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 80,
+        "Idioma Extranjero (Inglés)": 73,
+        "CÁLCULO": 90,
+        "TECNOLOGÍA E INFORMÁTICA": 85,
+        "Contabilidad": 91,
+        "FILOSOFÍA": 99,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 100,
+        "Química": 94,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 85,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 81,
+        "Idioma Extranjero (Inglés)": 79,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 81,
+        "Contabilidad": 80,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "ROJAS PEDRAZA  IVERSON LE",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 20,
+      "periodo_2": 27,
+      "periodo_3": 25
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 68,
+        "Química": 73,
+        "EDUCACIÓN ARTÍSTICA": 91,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 92,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 98,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 92,
+        "Lengua Castellana": 81,
+        "Idioma Extranjero (Inglés)": 64,
+        "CÁLCULO": 82,
+        "TECNOLOGÍA E INFORMÁTICA": 84,
+        "Contabilidad": 77,
+        "FILOSOFÍA": 88,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 79,
+        "Química": 66,
+        "EDUCACIÓN ARTÍSTICA": 87,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 89,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 82,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 89,
+        "Lengua Castellana": 76,
+        "Idioma Extranjero (Inglés)": 61,
+        "CÁLCULO": 88,
+        "TECNOLOGÍA E INFORMÁTICA": 72,
+        "Contabilidad": 62,
+        "FILOSOFÍA": 75,
+        "COMPORTAMIENTO SOCIAL": 90
+      },
+      "periodo_3": {
+        "Física": 74,
+        "Química": 77,
+        "EDUCACIÓN ARTÍSTICA": 98,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 98,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 84,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 98,
+        "Lengua Castellana": 67,
+        "Idioma Extranjero (Inglés)": 70,
+        "CÁLCULO": 61,
+        "TECNOLOGÍA E INFORMÁTICA": 80,
+        "Contabilidad": 77,
+        "FILOSOFÍA": 84,
+        "COMPORTAMIENTO SOCIAL": 90
+      }
+    }
+  },
+  {
+    "nombre": "ROJAS SOTO ANDRES FELIPE",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 24,
+      "periodo_2": 24,
+      "periodo_3": 22
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 79,
+        "Química": 69,
+        "EDUCACIÓN ARTÍSTICA": 65,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 92,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 90,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 92,
+        "Lengua Castellana": 64,
+        "Idioma Extranjero (Inglés)": 77,
+        "CÁLCULO": 75,
+        "TECNOLOGÍA E INFORMÁTICA": 85,
+        "Contabilidad": 74,
+        "FILOSOFÍA": 93,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 73,
+        "Química": 49,
+        "EDUCACIÓN ARTÍSTICA": 86,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 93,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 81,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 93,
+        "Lengua Castellana": 74,
+        "Idioma Extranjero (Inglés)": 82,
+        "CÁLCULO": 78,
+        "TECNOLOGÍA E INFORMÁTICA": 82,
+        "Contabilidad": 78,
+        "FILOSOFÍA": 92,
+        "COMPORTAMIENTO SOCIAL": 90
+      },
+      "periodo_3": {
+        "Física": 81,
+        "Química": 62,
+        "EDUCACIÓN ARTÍSTICA": 83,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 98,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 95,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 98,
+        "Lengua Castellana": 77,
+        "Idioma Extranjero (Inglés)": 84,
+        "CÁLCULO": 74,
+        "TECNOLOGÍA E INFORMÁTICA": 88,
+        "Contabilidad": 81,
+        "FILOSOFÍA": 88,
+        "COMPORTAMIENTO SOCIAL": 90
+      }
+    }
+  },
+  {
+    "nombre": "RUA ZEA DANIEL SANTIAGO",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 1,
+      "periodo_2": 6,
+      "periodo_3": 3
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 100,
+        "Química": 90,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 75,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 79,
+        "Idioma Extranjero (Inglés)": 99,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 100,
+        "Contabilidad": 95,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 95,
+        "Química": 83,
+        "EDUCACIÓN ARTÍSTICA": 87,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 94,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 86,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 94,
+        "Lengua Castellana": 87,
+        "Idioma Extranjero (Inglés)": 95,
+        "CÁLCULO": 98,
+        "TECNOLOGÍA E INFORMÁTICA": 90,
+        "Contabilidad": 98,
+        "FILOSOFÍA": 94,
+        "COMPORTAMIENTO SOCIAL": 90
+      },
+      "periodo_3": {
+        "Física": 100,
+        "Química": 89,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 80,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 99,
+        "Idioma Extranjero (Inglés)": 99,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 94,
+        "Contabilidad": 92,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "RUIZ HUERFANO  WENDY CATA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 5,
+      "periodo_2": 8,
+      "periodo_3": 14
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 85,
+        "Química": 75,
+        "EDUCACIÓN ARTÍSTICA": 95,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 98,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 80,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 98,
+        "Lengua Castellana": 74,
+        "Idioma Extranjero (Inglés)": 91,
+        "CÁLCULO": 99,
+        "TECNOLOGÍA E INFORMÁTICA": 91,
+        "Contabilidad": 90,
+        "FILOSOFÍA": 98,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 96,
+        "Química": 68,
+        "EDUCACIÓN ARTÍSTICA": 90,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 70,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 84,
+        "Idioma Extranjero (Inglés)": 83,
+        "CÁLCULO": 100,
+        "TECNOLOGÍA E INFORMÁTICA": 86,
+        "Contabilidad": 99,
+        "FILOSOFÍA": 95,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 89,
+        "Química": 74,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 85,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 80,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 85,
+        "Lengua Castellana": 66,
+        "Idioma Extranjero (Inglés)": 91,
+        "CÁLCULO": 98,
+        "TECNOLOGÍA E INFORMÁTICA": 90,
+        "Contabilidad": 95,
+        "FILOSOFÍA": 98,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "SANCHEZ GARCIA DOAL ALEJA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 24,
+      "periodo_2": 20,
+      "periodo_3": 23
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 89,
+        "Química": 74,
+        "EDUCACIÓN ARTÍSTICA": 66,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 75,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 68,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 75,
+        "Lengua Castellana": 70,
+        "Idioma Extranjero (Inglés)": 86,
+        "CÁLCULO": 96,
+        "TECNOLOGÍA E INFORMÁTICA": 89,
+        "Contabilidad": 76,
+        "FILOSOFÍA": 91,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 85,
+        "Química": 92,
+        "EDUCACIÓN ARTÍSTICA": 89,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 96,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 70,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 96,
+        "Lengua Castellana": 72,
+        "Idioma Extranjero (Inglés)": 82,
+        "CÁLCULO": 92,
+        "TECNOLOGÍA E INFORMÁTICA": 98,
+        "Contabilidad": 69,
+        "FILOSOFÍA": 95,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 94,
+        "Química": 67,
+        "EDUCACIÓN ARTÍSTICA": 85,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 85,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 78,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 85,
+        "Lengua Castellana": 81,
+        "Idioma Extranjero (Inglés)": 81,
+        "CÁLCULO": 86,
+        "TECNOLOGÍA E INFORMÁTICA": 94,
+        "Contabilidad": 70,
+        "FILOSOFÍA": 94,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "SUAN CARRILLO VALENTINA",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 22,
+      "periodo_2": 23,
+      "periodo_3": 24
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 70,
+        "Química": 65,
+        "EDUCACIÓN ARTÍSTICA": 99,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 83,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 80,
+        "Idioma Extranjero (Inglés)": 74,
+        "CÁLCULO": 63,
+        "TECNOLOGÍA E INFORMÁTICA": 84,
+        "Contabilidad": 72,
+        "FILOSOFÍA": 86,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 69,
+        "Química": 79,
+        "EDUCACIÓN ARTÍSTICA": 90,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 96,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 80,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 96,
+        "Lengua Castellana": 78,
+        "Idioma Extranjero (Inglés)": 65,
+        "CÁLCULO": 83,
+        "TECNOLOGÍA E INFORMÁTICA": 74,
+        "Contabilidad": 70,
+        "FILOSOFÍA": 91,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 86,
+        "Química": 80,
+        "EDUCACIÓN ARTÍSTICA": 85,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 85,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 72,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 85,
+        "Lengua Castellana": 67,
+        "Idioma Extranjero (Inglés)": 69,
+        "CÁLCULO": 98,
+        "TECNOLOGÍA E INFORMÁTICA": 81,
+        "Contabilidad": 64,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "SUAREZ PEREZ LAURA VERONI",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 2,
+      "periodo_2": 4,
+      "periodo_3": 4
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 99,
+        "Química": 83,
+        "EDUCACIÓN ARTÍSTICA": 99,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 98,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 87,
+        "Idioma Extranjero (Inglés)": 84,
+        "CÁLCULO": 98,
+        "TECNOLOGÍA E INFORMÁTICA": 95,
+        "Contabilidad": 96,
+        "FILOSOFÍA": 98,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 90,
+        "Química": 88,
+        "EDUCACIÓN ARTÍSTICA": 93,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 85,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 88,
+        "Idioma Extranjero (Inglés)": 87,
+        "CÁLCULO": 96,
+        "TECNOLOGÍA E INFORMÁTICA": 95,
+        "Contabilidad": 93,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 100,
+        "Química": 85,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 90,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 90,
+        "Idioma Extranjero (Inglés)": 95,
+        "CÁLCULO": 95,
+        "TECNOLOGÍA E INFORMÁTICA": 99,
+        "Contabilidad": 90,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "TOVAR BLANCO  YISSEL VALE",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 11,
+      "periodo_2": 15,
+      "periodo_3": 11
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 83,
+        "Química": 83,
+        "EDUCACIÓN ARTÍSTICA": 100,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 98,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 69,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 98,
+        "Lengua Castellana": 69,
+        "Idioma Extranjero (Inglés)": 78,
+        "CÁLCULO": 91,
+        "TECNOLOGÍA E INFORMÁTICA": 98,
+        "Contabilidad": 90,
+        "FILOSOFÍA": 97,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_2": {
+        "Física": 81,
+        "Química": 78,
+        "EDUCACIÓN ARTÍSTICA": 89,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 99,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 84,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 99,
+        "Lengua Castellana": 83,
+        "Idioma Extranjero (Inglés)": 78,
+        "CÁLCULO": 86,
+        "TECNOLOGÍA E INFORMÁTICA": 90,
+        "Contabilidad": 90,
+        "FILOSOFÍA": 95,
+        "COMPORTAMIENTO SOCIAL": 100
+      },
+      "periodo_3": {
+        "Física": 84,
+        "Química": 67,
+        "EDUCACIÓN ARTÍSTICA": 89,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 100,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 88,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 100,
+        "Lengua Castellana": 77,
+        "Idioma Extranjero (Inglés)": 92,
+        "CÁLCULO": 90,
+        "TECNOLOGÍA E INFORMÁTICA": 94,
+        "Contabilidad": 93,
+        "FILOSOFÍA": 100,
+        "COMPORTAMIENTO SOCIAL": 100
+      }
+    }
+  },
+  {
+    "nombre": "VENEGAS MOYA DANIEL ESTEB",
+    "curso": "Undécimo",
+    "puestos": {
+      "periodo_1": 28,
+      "periodo_2": 31,
+      "periodo_3": 30
+    },
+    "periodos": {
+      "periodo_1": {
+        "Física": 72,
+        "Química": 60,
+        "EDUCACIÓN ARTÍSTICA": 60,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 60,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 83,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 68,
+        "Lengua Castellana": 55,
+        "Idioma Extranjero (Inglés)": 70,
+        "CÁLCULO": 84,
+        "TECNOLOGÍA E INFORMÁTICA": 77,
+        "Contabilidad": 64,
+        "FILOSOFÍA": 90,
+        "COMPORTAMIENTO SOCIAL": 70
+      },
+      "periodo_2": {
+        "Física": 70,
+        "Química": 66,
+        "EDUCACIÓN ARTÍSTICA": 82,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 53,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 77,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 65,
+        "Lengua Castellana": 63,
+        "Idioma Extranjero (Inglés)": 63,
+        "CÁLCULO": 70,
+        "TECNOLOGÍA E INFORMÁTICA": 68,
+        "Contabilidad": 73,
+        "FILOSOFÍA": 73,
+        "COMPORTAMIENTO SOCIAL": 70
+      },
+      "periodo_3": {
+        "Física": 77,
+        "Química": 69,
+        "EDUCACIÓN ARTÍSTICA": 79,
+        "EDUCACIÓN ÉTICA Y EN VALORES": 44,
+        "EDUCACIÓN FÍSICA RECREACIÓN Y DEPORTES": 89,
+        "EDUCACIÓN RELIGIOSA Y MORAL": 64,
+        "Lengua Castellana": 56,
+        "Idioma Extranjero (Inglés)": 74,
+        "CÁLCULO": 66,
+        "TECNOLOGÍA E INFORMÁTICA": 82,
+        "Contabilidad": 71,
+        "FILOSOFÍA": 71,
+        "COMPORTAMIENTO SOCIAL": 75
+      }
+    }
+  }
+]
