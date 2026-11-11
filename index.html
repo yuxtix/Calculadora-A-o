@@ -96,23 +96,29 @@
       </button>
     </header>
 
-    <!-- Barra de Navegación por pestañas (Fija al fondo o superior) -->
-    <div class="grid grid-cols-3 bg-[#0a0e17] border-b border-[#1c273c] text-xs font-semibold uppercase tracking-wider">
-      <button onclick="switchTab('boletin')" id="tab-btn-boletin" class="py-3 text-center border-b-2 border-blue-500 text-blue-400 bg-blue-500/10 transition">
-        <i class="fa-solid fa-id-card block text-base mb-1"></i> Boletín
+    <!-- Barra de Navegación por pestañas (5 módulos completos) -->
+    <div class="grid grid-cols-5 bg-[#0a0e17] border-b border-[#1c273c] text-[10px] font-semibold uppercase tracking-wider">
+      <button onclick="switchTab('boletin')" id="tab-btn-boletin" class="py-2.5 text-center border-b-2 border-blue-500 text-blue-400 bg-blue-500/10 transition">
+        <i class="fa-solid fa-id-card block text-sm mb-0.5"></i> Boletín
       </button>
-      <button onclick="switchTab('simulador')" id="tab-btn-simulador" class="py-3 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition">
-        <i class="fa-solid fa-calculator block text-base mb-1"></i> Pasar P4
+      <button onclick="switchTab('analitica')" id="tab-btn-analitica" class="py-2.5 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition">
+        <i class="fa-solid fa-chart-line block text-sm mb-0.5"></i> Analítica
       </button>
-      <button onclick="switchTab('ranking')" id="tab-btn-ranking" class="py-3 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition">
-        <i class="fa-solid fa-trophy block text-base mb-1"></i> Rankings
+      <button onclick="switchTab('simulador')" id="tab-btn-simulador" class="py-2.5 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition">
+        <i class="fa-solid fa-calculator block text-sm mb-0.5"></i> Pasar P4
+      </button>
+      <button onclick="switchTab('ranking')" id="tab-btn-ranking" class="py-2.5 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition">
+        <i class="fa-solid fa-trophy block text-sm mb-0.5"></i> Rankings
+      </button>
+      <button onclick="switchTab('comparador')" id="tab-btn-comparador" class="py-2.5 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition">
+        <i class="fa-solid fa-scale-balanced block text-sm mb-0.5"></i> Versus
       </button>
     </div>
 
     <!-- SECCIÓN DE BUSCADOR PRINCIPAL -->
-    <section class="p-4 bg-[#101726] border-b border-[#1c273c]">
+    <section id="main-search-bar" class="p-4 bg-[#101726] border-b border-[#1c273c]">
       <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-        <i class="fa-solid fa-magnifying-glass text-blue-400 mr-1"></i> Buscar Estudiante
+        <i class="fa-solid fa-magnifying-glass text-blue-400 mr-1"></i> Buscar Estudiante Activo
       </label>
       <div class="relative">
         <input 
@@ -189,6 +195,68 @@
       </div>
     </main>
 
+    <!-- CONTENIDO: PESTAÑA NUEVA - ANALÍTICA PROFUNDA DEL ESTUDIANTE -->
+    <main id="tab-content-analitica" class="p-4 flex-1 space-y-4 hidden">
+      <!-- KPIs Estadísticos Principales -->
+      <div class="grid grid-cols-3 gap-2 text-center font-mono">
+        <div class="bg-[#101726] border border-[#1d2a42] p-2.5">
+          <span class="text-[9px] uppercase text-slate-400 block font-bold">Prom. Acumulado</span>
+          <span id="ana-prom-acumulado" class="text-base font-black text-blue-400">0.0</span>
+        </div>
+        <div class="bg-[#101726] border border-[#1d2a42] p-2.5">
+          <span class="text-[9px] uppercase text-slate-400 block font-bold">% Mejoría (P1→P3)</span>
+          <span id="ana-pct-mejoria" class="text-base font-black text-emerald-400">0%</span>
+        </div>
+        <div class="bg-[#101726] border border-[#1d2a42] p-2.5">
+          <span class="text-[9px] uppercase text-slate-400 block font-bold">Desv. Estándar (σ)</span>
+          <span id="ana-std-dev" class="text-base font-black text-purple-400">0.0</span>
+        </div>
+      </div>
+
+      <!-- Comparación entre Períodos -->
+      <div class="bg-[#101726] border border-[#1d2a42] p-3.5 space-y-2.5">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200 flex items-center justify-between">
+          <span><i class="fa-solid fa-chart-column text-blue-400 mr-1.5"></i> Comparación entre Períodos</span>
+          <span id="ana-best-period-badge" class="badge-rect bg-blue-500/20 text-blue-300 border border-blue-500/40">--</span>
+        </h3>
+        <div id="ana-period-comparison" class="space-y-2 font-mono text-xs"></div>
+      </div>
+
+      <!-- Materias que Mejoraron vs Empeoraron -->
+      <div class="grid grid-cols-2 gap-2.5">
+        <div class="bg-[#101726] border border-emerald-900/50 p-3">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-bold uppercase text-emerald-400"><i class="fa-solid fa-arrow-trend-up mr-1"></i> Mejoraron</span>
+            <span id="ana-count-improved" class="text-xs font-mono font-black bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5">0</span>
+          </div>
+          <div id="ana-list-improved" class="space-y-1.5 max-h-40 overflow-y-auto pr-1"></div>
+        </div>
+        <div class="bg-[#101726] border border-red-900/50 p-3">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-bold uppercase text-red-400"><i class="fa-solid fa-arrow-trend-down mr-1"></i> Empeoraron</span>
+            <span id="ana-count-worsened" class="text-xs font-mono font-black bg-red-500/20 text-red-300 px-1.5 py-0.5">0</span>
+          </div>
+          <div id="ana-list-worsened" class="space-y-1.5 max-h-40 overflow-y-auto pr-1"></div>
+        </div>
+      </div>
+
+      <!-- Distribución de Calificaciones -->
+      <div class="bg-[#101726] border border-[#1d2a42] p-3.5 space-y-2.5">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">
+          <i class="fa-solid fa-chart-pie text-amber-400 mr-1.5"></i> Distribución de Calificaciones
+        </h3>
+        <div id="ana-grade-distribution" class="space-y-2 font-mono text-xs"></div>
+      </div>
+
+      <!-- Evolución Individual de Cada Materia -->
+      <div class="bg-[#101726] border border-[#1d2a42] p-3.5 space-y-2.5">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">
+          <i class="fa-solid fa-timeline text-emerald-400 mr-1.5"></i> Evolución Individual por Materia
+        </h3>
+        <div id="ana-subject-evolution" class="space-y-2"></div>
+      </div>
+    </main>
+
     <!-- CONTENIDO: PESTAÑA 2 - SIMULADOR P4 (CÓMO PASAR EL AÑO) -->
     <main id="tab-content-simulador" class="p-4 flex-1 space-y-4 hidden">
       <!-- Explicación de la regla -->
@@ -245,28 +313,112 @@
       </div>
     </main>
 
-    <!-- CONTENIDO: PESTAÑA 3 - RANKINGS Y PUESTOS -->
+    <!-- CONTENIDO: PESTAÑA 3 - RANKINGS Y PUESTOS AVANZADOS -->
     <main id="tab-content-ranking" class="p-4 flex-1 space-y-4 hidden">
-      <div class="flex items-center justify-between">
-        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">
-          <i class="fa-solid fa-ranking-star text-amber-400 mr-1.5"></i> Tabla de Posiciones
-        </h3>
-        <select 
-          id="ranking-period-select" 
-          onchange="renderRankingTable()"
-          class="bg-[#101726] border border-[#223049] text-xs text-slate-200 font-mono py-1.5 px-2 focus:outline-none focus:border-blue-500"
-        >
-          <option value="promedio_general">Acumulado Global (P1+P2+P3)</option>
-          <option value="periodo_1">Período 1</option>
-          <option value="periodo_2">Período 2</option>
-          <option value="periodo_3">Período 3</option>
-        </select>
+      
+      <!-- Banner: Mayor Promedio del Curso -->
+      <div id="top-student-banner" class="bg-gradient-to-r from-[#131d31] to-[#1a263e] border border-amber-500/50 p-3.5 relative">
+        <!-- Render dinámico del #1 del curso -->
       </div>
 
-      <!-- Lista de Rankings Rectangular -->
-      <div id="ranking-list" class="space-y-1.5">
-        <!-- Render dinámico de rankings -->
+      <!-- Sub-navegación de vistas de Ranking -->
+      <div class="grid grid-cols-4 gap-1 bg-[#0a0f18] p-1 border border-[#1c273c] text-[10px] font-mono font-bold uppercase">
+        <button onclick="switchRankingSubView('general')" id="rk-sub-general" class="py-1.5 bg-blue-600 text-white">General</button>
+        <button onclick="switchRankingSubView('top10')" id="rk-sub-top10" class="py-1.5 text-slate-400 hover:text-white">Top 10</button>
+        <button onclick="switchRankingSubView('movers')" id="rk-sub-movers" class="py-1.5 text-slate-400 hover:text-white">Ascensos</button>
+        <button onclick="switchRankingSubView('hardest')" id="rk-sub-hardest" class="py-1.5 text-slate-400 hover:text-white">Materias</button>
       </div>
+
+      <!-- SUB-VISTA 1: TABLA GENERAL / POR PERIODO / HISTÓRICO -->
+      <div id="rk-view-general" class="space-y-3">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">
+            <i class="fa-solid fa-ranking-star text-amber-400 mr-1"></i> Clasificación
+          </h3>
+          <select 
+            id="ranking-period-select" 
+            onchange="renderRankingTable()"
+            class="bg-[#101726] border border-[#223049] text-xs text-slate-200 font-mono py-1.5 px-2 focus:outline-none focus:border-blue-500"
+          >
+            <option value="promedio_general">Ranking General (Promedio)</option>
+            <option value="historico">Ranking Histórico (Puestos P1-P3)</option>
+            <option value="periodo_1">Período 1</option>
+            <option value="periodo_2">Período 2</option>
+            <option value="periodo_3">Período 3</option>
+          </select>
+        </div>
+        <div id="ranking-list" class="space-y-1.5"></div>
+      </div>
+
+      <!-- SUB-VISTA 2: TOP 10 ACADÉMICO -->
+      <div id="rk-view-top10" class="space-y-3 hidden">
+        <div class="bg-[#101726] border border-[#1e2c46] p-3">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-1">
+            <i class="fa-solid fa-medal mr-1"></i> Cuadro de Honor: Top 10 Académico
+          </h3>
+          <p class="text-[11px] text-slate-400">Los 10 mejores promedios acumulados en los 3 períodos.</p>
+        </div>
+        <div id="rk-top10-list" class="space-y-1.5"></div>
+      </div>
+
+      <!-- SUB-VISTA 3: SUBIDAS, BAJADAS Y COMPARACIÓN DE POSICIONES -->
+      <div id="rk-view-movers" class="space-y-4 hidden">
+        <div class="grid grid-cols-2 gap-2.5">
+          <div class="bg-[#101726] border border-emerald-900/50 p-3">
+            <h4 class="text-[10px] font-bold uppercase text-emerald-400 mb-2">
+              <i class="fa-solid fa-angles-up mr-1"></i> Más Puestos Subieron
+            </h4>
+            <div id="rk-most-climbed" class="space-y-2"></div>
+          </div>
+          <div class="bg-[#101726] border border-red-900/50 p-3">
+            <h4 class="text-[10px] font-bold uppercase text-red-400 mb-2">
+              <i class="fa-solid fa-angles-down mr-1"></i> Más Puestos Bajaron
+            </h4>
+            <div id="rk-most-dropped" class="space-y-2"></div>
+          </div>
+        </div>
+
+        <div class="bg-[#101726] border border-[#1d2a42] p-3 space-y-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">
+            <i class="fa-solid fa-arrows-left-right text-blue-400 mr-1"></i> Comparación de Posiciones (P1 → P2 → P3)
+          </h4>
+          <div id="rk-positions-comparison" class="space-y-1.5 max-h-80 overflow-y-auto"></div>
+        </div>
+      </div>
+
+      <!-- SUB-VISTA 4: RANKING DE LAS MATERIAS MÁS DIFÍCILES -->
+      <div id="rk-view-hardest" class="space-y-3 hidden">
+        <div class="bg-[#101726] border border-[#1e2c46] p-3">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-red-400 mb-1">
+            <i class="fa-solid fa-fire-flame-curved mr-1"></i> Ranking de Materias Más Difíciles
+          </h3>
+          <p class="text-[11px] text-slate-400">Ordenadas de menor a mayor promedio grupal en todo el curso.</p>
+        </div>
+        <div id="rk-hardest-subjects-list" class="space-y-2"></div>
+      </div>
+
+    </main>
+
+    <!-- CONTENIDO: PESTAÑA 4 - COMPARADOR DE ESTUDIANTES (VERSUS) -->
+    <main id="tab-content-comparador" class="p-4 flex-1 space-y-4 hidden">
+      <div class="bg-[#101726] border border-[#1d2a42] p-3.5 space-y-3">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-blue-400 flex items-center gap-1.5">
+          <i class="fa-solid fa-scale-balanced"></i> Comparador Cara a Cara
+        </h3>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="text-[10px] font-mono uppercase text-blue-300 block mb-1 font-bold">Estudiante A</label>
+            <select id="comp-select-a" onchange="renderComparador()" class="w-full bg-[#0a0f1a] border border-blue-500/50 text-xs text-white p-2 font-mono focus:outline-none"></select>
+          </div>
+          <div>
+            <label class="text-[10px] font-mono uppercase text-emerald-300 block mb-1 font-bold">Estudiante B</label>
+            <select id="comp-select-b" onchange="renderComparador()" class="w-full bg-[#0a0f1a] border border-emerald-500/50 text-xs text-white p-2 font-mono focus:outline-none"></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenedor Dinámico del Versus -->
+      <div id="comparador-results" class="space-y-4"></div>
     </main>
 
     <!-- Modal de Configuración de URL JSON -->
@@ -281,7 +433,7 @@
           <input 
             type="text" 
             id="json-url-input" 
-            value="https://pastebin.com/raw/134wNHxB" 
+            value="https://yuxtix.github.io/Calculadora-A-o/a.json" 
             class="w-full bg-[#0a0f1a] border border-[#263753] px-3 py-2 text-xs font-mono text-white focus:outline-none focus:border-blue-500"
           />
           <p class="text-[11px] text-slate-400 mt-1 leading-normal">
@@ -481,7 +633,7 @@
     // ==========================================
     let estudiantes = [];
     let estudianteSeleccionado = null;
-    const DEFAULT_REMOTE_URL = 'https://pastebin.com/raw/134wNHxB';
+    const DEFAULT_REMOTE_URL = 'https://yuxtix.github.io/Calculadora-A-o/a.json';
     let jsonEndpoint = localStorage.getItem('grades_json_url') || DEFAULT_REMOTE_URL;
     let periodoFiltro = 'all'; // 'all', 'p1', 'p2', 'p3'
 
@@ -549,7 +701,9 @@
         seleccionarEstudiante(estudiantes[0]);
       }
       setupBuscador();
+      initComparadorSelects();
       renderRankingTable();
+      renderExtraRankings();
     }
 
     // ==========================================
@@ -657,6 +811,7 @@
 
       // Renderizar secciones
       renderMateriasBoletin();
+      renderAnaliticaEstudiante();
       actualizarCalculosP4();
     }
 
@@ -707,11 +862,27 @@
 
         const colorProm = promMateria >= 60 ? 'text-emerald-400' : 'text-red-400';
 
+        // Delta de evolución P1 -> P3
+        let deltaTag = '';
+        if (n1 !== null && n3 !== null) {
+          const diff = n3 - n1;
+          if (diff > 0) {
+            deltaTag = `<span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 border border-emerald-500/30"><i class="fa-solid fa-caret-up"></i> +${diff}</span>`;
+          } else if (diff < 0) {
+            deltaTag = `<span class="text-[10px] font-mono text-red-400 bg-red-500/10 px-1.5 py-0.5 border border-red-500/30"><i class="fa-solid fa-caret-down"></i> ${diff}</span>`;
+          } else {
+            deltaTag = `<span class="text-[10px] font-mono text-slate-400 bg-slate-500/10 px-1.5 py-0.5 border border-slate-500/30">= 0</span>`;
+          }
+        }
+
         return `
           <div class="bg-[#101726] border border-[#1c283f] p-3 shadow-sm">
-            <div class="flex justify-between items-start mb-2">
+            <div class="flex justify-between items-start mb-2 gap-2">
               <span class="text-xs font-bold text-slate-100 uppercase tracking-tight">${materia}</span>
-              <span class="text-xs font-mono font-bold ${colorProm}">Prom: ${promMateria}</span>
+              <div class="flex items-center gap-1.5 shrink-0">
+                ${deltaTag}
+                <span class="text-xs font-mono font-bold ${colorProm}">Prom: ${promMateria}</span>
+              </div>
             </div>
 
             <!-- Calificaciones por Período -->
@@ -747,6 +918,175 @@
       if (nota >= 80) return 'text-emerald-400';
       if (nota >= 60) return 'text-blue-400';
       return 'text-red-400';
+    }
+
+    // ==========================================
+    // ANALÍTICA PROFUNDA DEL ESTUDIANTE
+    // ==========================================
+    function renderAnaliticaEstudiante() {
+      if (!estudianteSeleccionado || !estudianteSeleccionado.periodos) return;
+
+      const p1 = estudianteSeleccionado.periodos.periodo_1 || {};
+      const p2 = estudianteSeleccionado.periodos.periodo_2 || {};
+      const p3 = estudianteSeleccionado.periodos.periodo_3 || {};
+
+      const materias = Array.from(new Set([...Object.keys(p1), ...Object.keys(p2), ...Object.keys(p3)]));
+
+      // Promedios por periodo
+      const avgP1 = calcularPromedioAlumno(estudianteSeleccionado, 'periodo_1');
+      const avgP2 = calcularPromedioAlumno(estudianteSeleccionado, 'periodo_2');
+      const avgP3 = calcularPromedioAlumno(estudianteSeleccionado, 'periodo_3');
+      const avgTotal = calcularPromedioAlumno(estudianteSeleccionado);
+
+      // Porcentaje de mejoría académica (P1 a P3)
+      const pctMejoria = avgP1 > 0 ? (((avgP3 - avgP1) / avgP1) * 100) : 0;
+
+      // Todas las calificaciones numéricas para desviación estándar y distribución
+      const todasLasNotas = [];
+      materias.forEach(m => {
+        if (p1[m] !== undefined) todasLasNotas.push(p1[m]);
+        if (p2[m] !== undefined) todasLasNotas.push(p2[m]);
+        if (p3[m] !== undefined) todasLasNotas.push(p3[m]);
+      });
+
+      // Desviación estándar
+      let stdDev = 0;
+      if (todasLasNotas.length > 0) {
+        const mean = todasLasNotas.reduce((a, b) => a + b, 0) / todasLasNotas.length;
+        const variance = todasLasNotas.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / todasLasNotas.length;
+        stdDev = Math.sqrt(variance);
+      }
+
+      // Pintar KPIs superiores
+      document.getElementById('ana-prom-acumulado').innerText = avgTotal.toFixed(2);
+      const mejoriaEl = document.getElementById('ana-pct-mejoria');
+      mejoriaEl.innerText = `${pctMejoria >= 0 ? '+' : ''}${pctMejoria.toFixed(1)}%`;
+      mejoriaEl.className = `text-base font-black ${pctMejoria >= 0 ? 'text-emerald-400' : 'text-red-400'}`;
+      document.getElementById('ana-std-dev').innerText = `±${stdDev.toFixed(1)}`;
+
+      // Mejor período
+      const periodosArr = [
+        { label: 'Período 1', val: avgP1, pos: estudianteSeleccionado.puestos?.periodo_1 },
+        { label: 'Período 2', val: avgP2, pos: estudianteSeleccionado.puestos?.periodo_2 },
+        { label: 'Período 3', val: avgP3, pos: estudianteSeleccionado.puestos?.periodo_3 }
+      ];
+      const mejorPeriodo = [...periodosArr].sort((a, b) => b.val - a.val)[0];
+      document.getElementById('ana-best-period-badge').innerText = `Mejor: ${mejorPeriodo.label} (${mejorPeriodo.val.toFixed(1)})`;
+
+      // Comparación entre períodos
+      document.getElementById('ana-period-comparison').innerHTML = periodosArr.map((p, idx) => {
+        const prev = idx > 0 ? periodosArr[idx - 1].val : null;
+        const diff = prev !== null ? (p.val - prev) : 0;
+        const diffStr = prev !== null 
+          ? `<span class="${diff >= 0 ? 'text-emerald-400' : 'text-red-400'}">${diff >= 0 ? '+' : ''}${diff.toFixed(1)} vs P${idx}</span>` 
+          : '<span class="text-slate-500">Base inicial</span>';
+
+        return `
+          <div class="bg-[#0a0f1a] border border-[#182338] p-2">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-200">${p.label} ${p.pos ? `<span class="text-blue-400">(#${p.pos})</span>` : ''}</span>
+              <div class="space-x-2">
+                ${diffStr}
+                <span class="font-extrabold text-white">${p.val.toFixed(1)} pts</span>
+              </div>
+            </div>
+            <div class="w-full bg-[#060911] h-1.5">
+              <div class="bg-blue-500 h-full" style="width: ${Math.min(100, p.val)}%"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Clasificar materias que mejoraron y empeoraron (P1 -> P3)
+      const mejoraron = [];
+      const empeoraron = [];
+      const evolucionMaterias = [];
+
+      materias.forEach(m => {
+        const n1 = p1[m] ?? 0;
+        const n2 = p2[m] ?? 0;
+        const n3 = p3[m] ?? 0;
+        const diffTotal = n3 - n1;
+        const pctM = n1 > 0 ? ((n3 - n1) / n1) * 100 : 0;
+
+        evolucionMaterias.push({ materia: m, n1, n2, n3, diffTotal, pctM });
+
+        if (diffTotal > 0) mejoraron.push({ materia: m, diff: diffTotal, n1, n3 });
+        else if (diffTotal < 0) empeoraron.push({ materia: m, diff: diffTotal, n1, n3 });
+      });
+
+      mejoraron.sort((a, b) => b.diff - a.diff);
+      empeoraron.sort((a, b) => a.diff - b.diff);
+
+      document.getElementById('ana-count-improved').innerText = mejoraron.length;
+      document.getElementById('ana-count-worsened').innerText = empeoraron.length;
+
+      document.getElementById('ana-list-improved').innerHTML = mejoraron.length > 0
+        ? mejoraron.map(item => `
+            <div class="bg-[#0a0f1a] border border-emerald-900/40 p-1.5 flex justify-between items-center text-[11px]">
+              <span class="text-slate-200 truncate pr-1">${item.materia}</span>
+              <span class="font-mono font-bold text-emerald-400 shrink-0">+${item.diff} (${item.n1}→${item.n3})</span>
+            </div>
+          `).join('')
+        : '<p class="text-[11px] text-slate-500 font-mono">Sin aumentos en P3</p>';
+
+      document.getElementById('ana-list-worsened').innerHTML = empeoraron.length > 0
+        ? empeoraron.map(item => `
+            <div class="bg-[#0a0f1a] border border-red-900/40 p-1.5 flex justify-between items-center text-[11px]">
+              <span class="text-slate-200 truncate pr-1">${item.materia}</span>
+              <span class="font-mono font-bold text-red-400 shrink-0">${item.diff} (${item.n1}→${item.n3})</span>
+            </div>
+          `).join('')
+        : '<p class="text-[11px] text-slate-500 font-mono">Ninguna bajó en P3</p>';
+
+      // Distribución de calificaciones
+      const rangos = [
+        { label: 'Superior (90 - 100)', min: 90, max: 100, color: 'bg-emerald-500', text: 'text-emerald-400' },
+        { label: 'Alto (80 - 89)', min: 80, max: 89.99, color: 'bg-blue-500', text: 'text-blue-400' },
+        { label: 'Básico (60 - 79)', min: 60, max: 79.99, color: 'bg-amber-500', text: 'text-amber-400' },
+        { label: 'Bajo (< 60)', min: 0, max: 59.99, color: 'bg-red-500', text: 'text-red-400' }
+      ];
+
+      document.getElementById('ana-grade-distribution').innerHTML = rangos.map(r => {
+        const count = todasLasNotas.filter(n => n >= r.min && n <= r.max).length;
+        const pct = todasLasNotas.length > 0 ? Math.round((count / todasLasNotas.length) * 100) : 0;
+        return `
+          <div>
+            <div class="flex justify-between text-[11px] mb-0.5">
+              <span class="${r.text} font-bold">${r.label}</span>
+              <span class="text-slate-300">${count} notas (${pct}%)</span>
+            </div>
+            <div class="w-full bg-[#080c14] h-2 border border-[#1a253a]">
+              <div class="${r.color} h-full" style="width: ${pct}%"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Evolución individual detallada de cada materia
+      document.getElementById('ana-subject-evolution').innerHTML = evolucionMaterias.map(item => {
+        const d12 = item.n2 - item.n1;
+        const d23 = item.n3 - item.n2;
+        const trendBadge = item.diffTotal > 0 
+          ? `<span class="text-emerald-400 font-bold">+${item.diffTotal} pts (${item.pctM >= 0 ? '+' : ''}${item.pctM.toFixed(1)}%)</span>`
+          : (item.diffTotal < 0 ? `<span class="text-red-400 font-bold">${item.diffTotal} pts (${item.pctM.toFixed(1)}%)</span>` : `<span class="text-slate-400 font-bold">Estable (0%)</span>`);
+
+        return `
+          <div class="bg-[#0a0f1a] border border-[#1a263d] p-2.5 text-xs">
+            <div class="flex justify-between items-center mb-1.5">
+              <span class="font-bold text-slate-200 uppercase text-[11px]">${item.materia}</span>
+              <span class="font-mono text-[10px]">${trendBadge}</span>
+            </div>
+            <div class="grid grid-cols-5 gap-1 items-center text-center font-mono text-[10px] bg-[#101726] p-1.5 border border-[#172236]">
+              <div><span class="text-slate-400 block">P1</span><strong class="text-white">${item.n1}</strong></div>
+              <div class="${d12 >= 0 ? 'text-emerald-400' : 'text-red-400'}">→ ${d12 >= 0 ? '+' : ''}${d12} →</div>
+              <div><span class="text-slate-400 block">P2</span><strong class="text-white">${item.n2}</strong></div>
+              <div class="${d23 >= 0 ? 'text-emerald-400' : 'text-red-400'}">→ ${d23 >= 0 ? '+' : ''}${d23} →</div>
+              <div><span class="text-slate-400 block">P3</span><strong class="text-white">${item.n3}</strong></div>
+            </div>
+          </div>
+        `;
+      }).join('');
     }
 
     // ==========================================
@@ -892,6 +1232,29 @@
       return total > 0 ? (sum / total) : 0;
     }
 
+    function calcularPuestoPromedioHistorico(alumno) {
+      if (!alumno.puestos) return 999;
+      const vals = ['periodo_1', 'periodo_2', 'periodo_3']
+        .map(k => alumno.puestos[k])
+        .filter(v => v !== undefined && v !== null);
+      if (vals.length === 0) return 999;
+      return vals.reduce((a, b) => a + b, 0) / vals.length;
+    }
+
+    function switchRankingSubView(subView) {
+      ['general', 'top10', 'movers', 'hardest'].forEach(v => {
+        const viewEl = document.getElementById(`rk-view-${v}`);
+        const btnEl = document.getElementById(`rk-sub-${v}`);
+        if (v === subView) {
+          viewEl.classList.remove('hidden');
+          btnEl.className = 'py-1.5 bg-blue-600 text-white';
+        } else {
+          viewEl.classList.add('hidden');
+          btnEl.className = 'py-1.5 text-slate-400 hover:text-white';
+        }
+      });
+    }
+
     function renderRankingTable() {
       const container = document.getElementById('ranking-list');
       const criterio = document.getElementById('ranking-period-select').value;
@@ -900,6 +1263,13 @@
 
       if (criterio === 'promedio_general') {
         listaOrdenada.sort((a, b) => calcularPromedioAlumno(b) - calcularPromedioAlumno(a));
+      } else if (criterio === 'historico') {
+        listaOrdenada.sort((a, b) => {
+          const histA = calcularPuestoPromedioHistorico(a);
+          const histB = calcularPuestoPromedioHistorico(b);
+          if (histA !== histB) return histA - histB;
+          return calcularPromedioAlumno(b) - calcularPromedioAlumno(a);
+        });
       } else {
         // Ordenar por puesto asignado en el JSON si existe, o por promedio de ese periodo
         listaOrdenada.sort((a, b) => {
@@ -913,9 +1283,11 @@
       container.innerHTML = listaOrdenada.map((alumno, index) => {
         const rank = index + 1;
         const esSeleccionado = estudianteSeleccionado && estudianteSeleccionado.nombre === alumno.nombre;
-        const prom = (criterio === 'promedio_general') 
+        const prom = (criterio === 'promedio_general' || criterio === 'historico') 
           ? calcularPromedioAlumno(alumno).toFixed(1)
           : calcularPromedioAlumno(alumno, criterio).toFixed(1);
+
+        const pHist = calcularPuestoPromedioHistorico(alumno);
 
         let rankBadgeBg = 'bg-[#141e30] text-slate-300 border-[#233552]';
         let medalIcon = '';
@@ -931,6 +1303,10 @@
           medalIcon = '<i class="fa-solid fa-award text-amber-600 mr-1 text-xs"></i>';
         }
 
+        const extraSub = criterio === 'historico'
+          ? `Puesto Promedio: #${pHist.toFixed(1)} (P1:#${alumno.puestos?.periodo_1 ?? '-'} P2:#${alumno.puestos?.periodo_2 ?? '-'} P3:#${alumno.puestos?.periodo_3 ?? '-'})`
+          : `${alumno.curso || ''} ${alumno.puestos && alumno.puestos[criterio] ? `• Puesto oficial: #${alumno.puestos[criterio]}` : ''}`;
+
         return `
           <div 
             onclick="seleccionarDesdeRanking('${alumno.nombre.replace(/'/g, "\\'")}')" 
@@ -945,7 +1321,7 @@
                   ${medalIcon} ${alumno.nombre}
                 </p>
                 <span class="text-[10px] text-slate-400 font-mono">
-                  ${alumno.curso || ''} ${alumno.puestos && alumno.puestos[criterio] ? `• Puesto original: #${alumno.puestos[criterio]}` : ''}
+                  ${extraSub}
                 </span>
               </div>
             </div>
@@ -957,6 +1333,295 @@
           </div>
         `;
       }).join('');
+    }
+
+    function renderExtraRankings() {
+      if (estudiantes.length === 0) return;
+
+      // 1. Mayor promedio del curso y Top 10
+      const ordenadosPorProm = [...estudiantes].sort((a, b) => calcularPromedioAlumno(b) - calcularPromedioAlumno(a));
+      const mejorEstudiante = ordenadosPorProm[0];
+      const mejorProm = calcularPromedioAlumno(mejorEstudiante).toFixed(2);
+
+      document.getElementById('top-student-banner').innerHTML = `
+        <div class="flex justify-between items-center">
+          <div>
+            <span class="badge-rect bg-amber-500/20 text-amber-300 border border-amber-500/40 mb-1">
+              <i class="fa-solid fa-crown mr-1"></i> Mayor Promedio del Curso
+            </span>
+            <h4 class="text-sm font-black text-white uppercase">${mejorEstudiante.nombre}</h4>
+            <p class="text-[10px] text-slate-300 font-mono">Puestos: P1 #${mejorEstudiante.puestos?.periodo_1 ?? '-'} | P2 #${mejorEstudiante.puestos?.periodo_2 ?? '-'} | P3 #${mejorEstudiante.puestos?.periodo_3 ?? '-'}</p>
+          </div>
+          <div class="text-right font-mono">
+            <span class="text-2xl font-black text-amber-400">${mejorProm}</span>
+            <span class="text-[9px] text-slate-300 block uppercase">Promedio General</span>
+          </div>
+        </div>
+      `;
+
+      // Top 10 Académico
+      const top10 = ordenadosPorProm.slice(0, 10);
+      document.getElementById('rk-top10-list').innerHTML = top10.map((al, idx) => {
+        const avg = calcularPromedioAlumno(al).toFixed(2);
+        return `
+          <div onclick="seleccionarDesdeRanking('${al.nombre.replace(/'/g, "\\'")}')" class="p-2.5 bg-[#101726] border border-[#1d2c47] flex justify-between items-center cursor-pointer hover:bg-[#162136]">
+            <div class="flex items-center gap-2.5">
+              <span class="w-6 h-6 bg-amber-500/10 border border-amber-500/40 text-amber-300 font-mono text-xs font-bold flex items-center justify-center">${idx + 1}</span>
+              <div>
+                <p class="text-xs font-bold text-white uppercase">${al.nombre}</p>
+                <span class="text-[10px] font-mono text-slate-400">P1: ${calcularPromedioAlumno(al, 'periodo_1').toFixed(1)} | P2: ${calcularPromedioAlumno(al, 'periodo_2').toFixed(1)} | P3: ${calcularPromedioAlumno(al, 'periodo_3').toFixed(1)}</span>
+              </div>
+            </div>
+            <span class="font-mono text-sm font-black text-emerald-400">${avg}</span>
+          </div>
+        `;
+      }).join('');
+
+      // 2. Estudiantes que más puestos subieron y bajaron (P1 vs P3)
+      const movimientos = estudiantes.map(al => {
+        const pos1 = al.puestos?.periodo_1;
+        const pos2 = al.puestos?.periodo_2;
+        const pos3 = al.puestos?.periodo_3;
+        // Subir de puesto significa pasar de ej. puesto 10 a puesto 3 (pos1 - pos3 > 0)
+        const cambioP1P3 = (pos1 !== undefined && pos3 !== undefined) ? (pos1 - pos3) : 0;
+        return { alumno: al, pos1, pos2, pos3, cambio: cambioP1P3 };
+      });
+
+      const subieron = movimientos.filter(m => m.cambio > 0).sort((a, b) => b.cambio - a.cambio);
+      const bajaron = movimientos.filter(m => m.cambio < 0).sort((a, b) => a.cambio - b.cambio);
+
+      document.getElementById('rk-most-climbed').innerHTML = subieron.length > 0
+        ? subieron.slice(0, 6).map(m => `
+            <div onclick="seleccionarDesdeRanking('${m.alumno.nombre.replace(/'/g, "\\'")}')" class="bg-[#0a0f1a] border border-emerald-900/40 p-2 cursor-pointer">
+              <p class="text-[11px] font-bold text-slate-100 truncate">${m.alumno.nombre}</p>
+              <div class="flex justify-between items-center font-mono text-[10px] mt-0.5">
+                <span class="text-slate-400">#${m.pos1} → #${m.pos3}</span>
+                <span class="text-emerald-400 font-bold"><i class="fa-solid fa-arrow-up"></i> +${m.cambio} puestos</span>
+              </div>
+            </div>
+          `).join('')
+        : '<p class="text-[11px] text-slate-500 font-mono">Sin ascensos registrados</p>';
+
+      document.getElementById('rk-most-dropped').innerHTML = bajaron.length > 0
+        ? bajaron.slice(0, 6).map(m => `
+            <div onclick="seleccionarDesdeRanking('${m.alumno.nombre.replace(/'/g, "\\'")}')" class="bg-[#0a0f1a] border border-red-900/40 p-2 cursor-pointer">
+              <p class="text-[11px] font-bold text-slate-100 truncate">${m.alumno.nombre}</p>
+              <div class="flex justify-between items-center font-mono text-[10px] mt-0.5">
+                <span class="text-slate-400">#${m.pos1} → #${m.pos3}</span>
+                <span class="text-red-400 font-bold"><i class="fa-solid fa-arrow-down"></i> ${m.cambio} puestos</span>
+              </div>
+            </div>
+          `).join('')
+        : '<p class="text-[11px] text-slate-500 font-mono">Sin descensos registrados</p>';
+
+      // Tabla de comparación de posiciones entre periodos
+      document.getElementById('rk-positions-comparison').innerHTML = movimientos.map(m => {
+        const badge = m.cambio > 0
+          ? `<span class="text-emerald-400 font-bold">+${m.cambio} ▲</span>`
+          : (m.cambio < 0 ? `<span class="text-red-400 font-bold">${m.cambio} ▼</span>` : `<span class="text-slate-400">= 0</span>`);
+        return `
+          <div onclick="seleccionarDesdeRanking('${m.alumno.nombre.replace(/'/g, "\\'")}')" class="bg-[#0a0f1a] border border-[#19253a] p-2 flex justify-between items-center text-xs cursor-pointer hover:bg-[#131c2e]">
+            <span class="font-bold text-slate-200 truncate pr-2 text-[11px]">${m.alumno.nombre}</span>
+            <div class="flex items-center gap-2 font-mono text-[10px] shrink-0">
+              <span class="bg-[#101726] px-1.5 py-0.5 border border-[#22314d]">P1: #${m.pos1 ?? '-'}</span>
+              <span class="bg-[#101726] px-1.5 py-0.5 border border-[#22314d]">P2: #${m.pos2 ?? '-'}</span>
+              <span class="bg-[#101726] px-1.5 py-0.5 border border-[#22314d]">P3: #${m.pos3 ?? '-'}</span>
+              <span class="w-10 text-right">${badge}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // 3. Ranking de las materias más difíciles del curso
+      const mapaMaterias = {};
+      estudiantes.forEach(est => {
+        ['periodo_1', 'periodo_2', 'periodo_3'].forEach(p => {
+          const notasObj = est.periodos?.[p] || {};
+          Object.entries(notasObj).forEach(([mat, val]) => {
+            if (!mapaMaterias[mat]) mapaMaterias[mat] = { suma: 0, count: 0, reprobadas: 0, min: 100, max: 0 };
+            mapaMaterias[mat].suma += val;
+            mapaMaterias[mat].count += 1;
+            if (val < 60) mapaMaterias[mat].reprobadas += 1;
+            if (val < mapaMaterias[mat].min) mapaMaterias[mat].min = val;
+            if (val > mapaMaterias[mat].max) mapaMaterias[mat].max = val;
+          });
+        });
+      });
+
+      const listaMateriasDificiles = Object.entries(mapaMaterias).map(([nombre, stats]) => ({
+        nombre,
+        promedio: stats.count > 0 ? stats.suma / stats.count : 0,
+        tasaReprobacion: stats.count > 0 ? (stats.reprobadas / stats.count) * 100 : 0,
+        min: stats.min,
+        max: stats.max
+      })).sort((a, b) => a.promedio - b.promedio);
+
+      document.getElementById('rk-hardest-subjects-list').innerHTML = listaMateriasDificiles.map((m, idx) => {
+        const esCritica = idx < 3;
+        return `
+          <div class="bg-[#101726] border ${esCritica ? 'border-red-900/60' : 'border-[#1d2a42]'} p-3">
+            <div class="flex justify-between items-start mb-1.5">
+              <div>
+                <span class="text-[10px] font-mono ${esCritica ? 'text-red-400 font-bold' : 'text-slate-400'}">#${idx + 1} Más Difícil</span>
+                <h4 class="text-xs font-bold text-white uppercase">${m.nombre}</h4>
+              </div>
+              <div class="text-right font-mono">
+                <span class="text-sm font-black ${m.promedio < 75 ? 'text-red-400' : 'text-amber-400'}">${m.promedio.toFixed(1)}</span>
+                <span class="text-[9px] text-slate-400 block">Prom. Curso</span>
+              </div>
+            </div>
+            <div class="flex justify-between text-[10px] font-mono text-slate-400 mb-1">
+              <span>Nota Mín: <strong class="text-red-300">${m.min}</strong> | Máx: <strong class="text-emerald-300">${m.max}</strong></span>
+              <span>Reprobación: <strong class="text-red-400">${m.tasaReprobacion.toFixed(0)}%</strong></span>
+            </div>
+            <div class="w-full bg-[#080c14] h-1.5">
+              <div class="${esCritica ? 'bg-red-500' : 'bg-amber-500'} h-full" style="width: ${Math.min(100, m.promedio)}%"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ==========================================
+    // COMPARADOR DE ESTUDIANTES (VERSUS 1 A 1)
+    // ==========================================
+    function initComparadorSelects() {
+      const selA = document.getElementById('comp-select-a');
+      const selB = document.getElementById('comp-select-b');
+      if (!selA || !selB || estudiantes.length === 0) return;
+
+      const optionsHtml = estudiantes.map((e, idx) => `<option value="${idx}">${e.nombre}</option>`).join('');
+      selA.innerHTML = optionsHtml;
+      selB.innerHTML = optionsHtml;
+
+      selA.value = "0";
+      selB.value = estudiantes.length > 1 ? "1" : "0";
+      renderComparador();
+    }
+
+    function renderComparador() {
+      const idxA = parseInt(document.getElementById('comp-select-a').value || "0", 10);
+      const idxB = parseInt(document.getElementById('comp-select-b').value || "0", 10);
+      const estA = estudiantes[idxA];
+      const estB = estudiantes[idxB];
+      const container = document.getElementById('comparador-results');
+
+      if (!estA || !estB) return;
+
+      const promA = calcularPromedioAlumno(estA);
+      const promB = calcularPromedioAlumno(estB);
+
+      const p1A = calcularPromedioAlumno(estA, 'periodo_1');
+      const p2A = calcularPromedioAlumno(estA, 'periodo_2');
+      const p3A = calcularPromedioAlumno(estA, 'periodo_3');
+
+      const p1B = calcularPromedioAlumno(estB, 'periodo_1');
+      const p2B = calcularPromedioAlumno(estB, 'periodo_2');
+      const p3B = calcularPromedioAlumno(estB, 'periodo_3');
+
+      // Materias conjuntas
+      const materias = Array.from(new Set([
+        ...Object.keys(estA.periodos?.periodo_1 || {}),
+        ...Object.keys(estB.periodos?.periodo_1 || {})
+      ]));
+
+      let winsA = 0;
+      let winsB = 0;
+      let ties = 0;
+
+      const comparativaMaterias = materias.map(mat => {
+        const avgMatA = ((estA.periodos?.periodo_1?.[mat] || 0) + (estA.periodos?.periodo_2?.[mat] || 0) + (estA.periodos?.periodo_3?.[mat] || 0)) / 3;
+        const avgMatB = ((estB.periodos?.periodo_1?.[mat] || 0) + (estB.periodos?.periodo_2?.[mat] || 0) + (estB.periodos?.periodo_3?.[mat] || 0)) / 3;
+        if (avgMatA > avgMatB) winsA++;
+        else if (avgMatB > avgMatA) winsB++;
+        else ties++;
+        return { mat, avgMatA, avgMatB, diff: avgMatA - avgMatB };
+      });
+
+      // Fortalezas académicas (Top 2 mejores materias de cada uno)
+      const fortalezasA = [...comparativaMaterias].sort((a, b) => b.avgMatA - a.avgMatA).slice(0, 2);
+      const fortalezasB = [...comparativaMaterias].sort((a, b) => b.avgMatB - a.avgMatB).slice(0, 2);
+
+      container.innerHTML = `
+        <!-- Marcador Principal de Promedios y Victorias -->
+        <div class="bg-[#101726] border border-[#1d2a42] p-3.5 space-y-3">
+          <div class="grid grid-cols-3 items-center text-center font-mono">
+            <div class="p-2 bg-blue-950/30 border border-blue-500/40">
+              <span class="text-[9px] text-blue-300 uppercase block truncate">${estA.nombre.split(' ')[0]}</span>
+              <span class="text-xl font-black text-blue-400">${promA.toFixed(1)}</span>
+              <span class="text-[10px] text-slate-400 block">${winsA} mat. ganadas</span>
+            </div>
+            <div class="text-xs font-extrabold text-slate-400">VS</div>
+            <div class="p-2 bg-emerald-950/30 border border-emerald-500/40">
+              <span class="text-[9px] text-emerald-300 uppercase block truncate">${estB.nombre.split(' ')[0]}</span>
+              <span class="text-xl font-black text-emerald-400">${promB.toFixed(1)}</span>
+              <span class="text-[10px] text-slate-400 block">${winsB} mat. ganadas</span>
+            </div>
+          </div>
+
+          <!-- Comparación de Puestos y Evolución por Periodo -->
+          <div class="space-y-1.5 pt-2 border-t border-[#1a253a] font-mono text-xs">
+            <div class="grid grid-cols-3 text-center py-1 bg-[#0a0f1a]">
+              <span class="${p1A >= p1B ? 'text-blue-400 font-bold' : 'text-slate-400'}">${p1A.toFixed(1)} (#${estA.puestos?.periodo_1 ?? '-'})</span>
+              <span class="text-[10px] text-slate-400 uppercase">Período 1</span>
+              <span class="${p1B >= p1A ? 'text-emerald-400 font-bold' : 'text-slate-400'}">${p1B.toFixed(1)} (#${estB.puestos?.periodo_1 ?? '-'})</span>
+            </div>
+            <div class="grid grid-cols-3 text-center py-1 bg-[#0a0f1a]">
+              <span class="${p2A >= p2B ? 'text-blue-400 font-bold' : 'text-slate-400'}">${p2A.toFixed(1)} (#${estA.puestos?.periodo_2 ?? '-'})</span>
+              <span class="text-[10px] text-slate-400 uppercase">Período 2</span>
+              <span class="${p2B >= p2A ? 'text-emerald-400 font-bold' : 'text-slate-400'}">${p2B.toFixed(1)} (#${estB.puestos?.periodo_2 ?? '-'})</span>
+            </div>
+            <div class="grid grid-cols-3 text-center py-1 bg-[#0a0f1a]">
+              <span class="${p3A >= p3B ? 'text-blue-400 font-bold' : 'text-slate-400'}">${p3A.toFixed(1)} (#${estA.puestos?.periodo_3 ?? '-'})</span>
+              <span class="text-[10px] text-slate-400 uppercase">Período 3</span>
+              <span class="${p3B >= p3A ? 'text-emerald-400 font-bold' : 'text-slate-400'}">${p3B.toFixed(1)} (#${estB.puestos?.periodo_3 ?? '-'})</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fortalezas Académicas -->
+        <div class="grid grid-cols-2 gap-2.5">
+          <div class="bg-[#101726] border border-blue-900/50 p-2.5">
+            <span class="text-[10px] font-bold uppercase text-blue-400 block mb-1"><i class="fa-solid fa-star mr-1"></i> Fortalezas A</span>
+            ${fortalezasA.map(f => `<div class="text-[11px] text-slate-200 truncate">${f.mat}: <strong class="font-mono text-blue-300">${f.avgMatA.toFixed(1)}</strong></div>`).join('')}
+          </div>
+          <div class="bg-[#101726] border border-emerald-900/50 p-2.5">
+            <span class="text-[10px] font-bold uppercase text-emerald-400 block mb-1"><i class="fa-solid fa-star mr-1"></i> Fortalezas B</span>
+            ${fortalezasB.map(f => `<div class="text-[11px] text-slate-200 truncate">${f.mat}: <strong class="font-mono text-emerald-300">${f.avgMatB.toFixed(1)}</strong></div>`).join('')}
+          </div>
+        </div>
+
+        <!-- Desglose Materia por Materia (Quién supera a quién) -->
+        <div class="bg-[#101726] border border-[#1d2a42] p-3.5 space-y-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">
+            <i class="fa-solid fa-list-ol text-blue-400 mr-1"></i> Comparativa por Materia (Prom. P1-P3)
+          </h4>
+          <div class="space-y-1.5">
+            ${comparativaMaterias.map(item => {
+              const ganaA = item.avgMatA > item.avgMatB;
+              const ganaB = item.avgMatB > item.avgMatA;
+              return `
+                <div class="bg-[#0a0f1a] border border-[#182338] p-2">
+                  <div class="flex justify-between items-center text-[11px] mb-1">
+                    <span class="font-bold text-slate-200 uppercase truncate">${item.mat}</span>
+                    <span class="font-mono text-[10px] ${ganaA ? 'text-blue-400' : (ganaB ? 'text-emerald-400' : 'text-slate-400')}">
+                      ${ganaA ? `Gana A (+${item.diff.toFixed(1)})` : (ganaB ? `Gana B (+${Math.abs(item.diff).toFixed(1)})` : 'Empate')}
+                    </span>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2 font-mono text-xs">
+                    <div class="flex justify-between bg-[#101726] px-2 py-1 border ${ganaA ? 'border-blue-500/60 text-blue-300 font-bold' : 'border-transparent text-slate-400'}">
+                      <span>A:</span><span>${item.avgMatA.toFixed(1)}</span>
+                    </div>
+                    <div class="flex justify-between bg-[#101726] px-2 py-1 border ${ganaB ? 'border-emerald-500/60 text-emerald-300 font-bold' : 'border-transparent text-slate-400'}">
+                      <span>B:</span><span>${item.avgMatB.toFixed(1)}</span>
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
     }
 
     function seleccionarDesdeRanking(nombre) {
@@ -971,21 +1636,33 @@
     // CAMBIO DE PESTAÑAS
     // ==========================================
     function switchTab(tabId) {
-      const tabs = ['boletin', 'simulador', 'ranking'];
+      const tabs = ['boletin', 'analitica', 'simulador', 'ranking', 'comparador'];
       tabs.forEach(t => {
         const content = document.getElementById(`tab-content-${t}`);
         const btn = document.getElementById(`tab-btn-${t}`);
         if (t === tabId) {
           content.classList.remove('hidden');
-          btn.className = 'py-3 text-center border-b-2 border-blue-500 text-blue-400 bg-blue-500/10 transition';
+          btn.className = 'py-2.5 text-center border-b-2 border-blue-500 text-blue-400 bg-blue-500/10 transition';
         } else {
           content.classList.add('hidden');
-          btn.className = 'py-3 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition';
+          btn.className = 'py-2.5 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition';
         }
       });
 
+      // Ocultar buscador individual cuando estemos en el comparador 1v1 para ahorrar espacio en celular
+      const searchBar = document.getElementById('main-search-bar');
+      if (tabId === 'comparador') {
+        searchBar.classList.add('hidden');
+        renderComparador();
+      } else {
+        searchBar.classList.remove('hidden');
+      }
+
       if (tabId === 'ranking') {
         renderRankingTable();
+        renderExtraRankings();
+      } else if (tabId === 'analitica') {
+        renderAnaliticaEstudiante();
       }
     }
 
